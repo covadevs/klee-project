@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        - load staticfiles
+        title=title
+        link(rel='stylesheet', href='/static/css/login.css')
+        link(href="https://fonts.googleapis.com/css?family=Open+Sans:300", rel="stylesheet")
+    body
+        .container
+            form(method="POST")#form.form-container
+                span.login-title Sign in to Klee
+                input(type="text", placeholder="Username")#username
+                input(type="password", placeholder="Password")#password
+                input(type="submit", value="Sign in")#signin
+            p#new.signup New to Klee? 
+                a(href="#") Create an account
+                |.

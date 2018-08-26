@@ -1,0 +1,127 @@
+* {
+    font-family: 'Open Sans';
+}
+.container {
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    grid-template-columns: 400px;
+    grid-template-areas:
+    "form"
+    "new";
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: grid;
+    grid-template-rows: 150px repeat(3, 1fr);
+    grid-template-columns: 300px;
+    grid-template-areas:
+    "title"
+    "username"
+    "password"
+    "signin";
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title {
+    grid-area: title;
+    text-align: center;
+    font-size: 40px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 200ms;
+}
+
+input[type=text]:hover {
+    transition: 200ms;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: 200ms;
+}
+
+input[type=password]:hover {
+    transition: 200ms;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 200ms;
+    font-size: 20px;
+}
+
+input[type=submit]:hover {
+    transition: 200ms;
+    text-shadow: 0 0 3px white;
+}
+
+#form {
+    grid-area:form
+}
+
+#username {
+    grid-area:username
+}
+
+#password {
+    grid-area:password
+}
+
+#signin {
+    grid-area:signin
+}
+
+#new {
+    grid-area: new;
+}
+
+.signup {
+    text-align: center;
+}
+
+@media(max-width: 409px) {
+    .container {
+        grid-template-columns: 300px;
+    }
+
+    .form-container {
+        grid-template-columns: 250px;
+    }
+}
