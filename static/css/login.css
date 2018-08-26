@@ -1,6 +1,18 @@
 * {
     font-family: 'Open Sans';
 }
+
+a {
+    transition: 200ms;
+    text-decoration: none;
+    font-weight: 600;
+    color: #FB005B;
+}
+
+a:hover {
+    transition: 200ms;
+    color: #B00040;
+}
 .container {
     display: grid;
     grid-template-rows: 1fr 100px;
@@ -13,6 +25,7 @@
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: url("/static/images/klee.svg") 100px -100px no-repeat;
 }
 
 body {
@@ -85,10 +98,14 @@ input[type=submit] {
     cursor: pointer;
     transition: 200ms;
     font-size: 20px;
+    border: 1px solid black;
 }
 
 input[type=submit]:hover {
     transition: 200ms;
+    /* background-color: black;
+    color: white; */
+    /* color: #FB005B; */
     text-shadow: 0 0 3px white;
 }
 
@@ -112,13 +129,20 @@ input[type=submit]:hover {
     grid-area: new;
 }
 
+#logo {
+    grid-area: logo;
+    width: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .signup {
     text-align: center;
 }
 
-@media(max-width: 409px) {
+@media(max-width: 310px) {
     .container {
-        grid-template-columns: 300px;
+        grid-template-columns: 280px;
     }
 
     .form-container {
