@@ -11,9 +11,11 @@ html
             //- img(src="/static/images/klee.svg")#logo
             form(method="POST")#form.form-container
                 span.login-title Sign in to Klee 
-                input(type="text", placeholder="Username")#username
-                input(type="password", placeholder="Password")#password
+                input(type="text", placeholder="Username or email address", required)#username
+                input(type="password", placeholder="Password", required)#password
                 input(type="submit", value="Sign in")#signin
             p#new.signup New to Klee? 
-                a(href="#") Create an account
+                a(href="#create") Create an account
                 |.
+                br
+                a(href="#reset") Forgot password?
