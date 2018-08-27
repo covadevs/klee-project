@@ -1,21 +1,17 @@
-doctype html
-html
-    head
-        - load staticfiles
-        title=title
-        //- link(href="https://fonts.googleapis.com/css?family=Open+Sans:300", rel="preload")
-        link(rel='stylesheet', href='/static/css/login.css')
-        link(href="https://fonts.googleapis.com/css?family=Open+Sans:300", rel="stylesheet")
-    body
-        .container
-            //- img(src="/static/images/klee.svg")#logo
-            form(method="POST")#form.form-container
-                span.login-title Sign in to Klee 
-                input(type="text", placeholder="Username or email address", required)#username
-                input(type="password", placeholder="Password", required)#password
-                input(type="submit", value="Sign in")#signin
-            p#new.signup New to Klee? 
-                a(href="#create") Create an account
-                |.
-                br
-                a(href="#reset") Forgot password?
+extends layout
+
+block head
+    link(rel='stylesheet', href='/static/css/login.css')
+block body
+    .container
+        //- img(src="/static/images/klee.svg")#logo
+        form(method="POST")#form.form-container
+            span.login-title Sign in to Klee 
+            input(type="text", placeholder="Username or email address", required)#username
+            input(type="password", placeholder="Password", required)#password
+            input(type="submit", value="Sign in")#signin
+        p#new.signup New to Klee? 
+            a(href="new-account") Create an account
+            |.
+            br
+            a(href="#reset") Forgot password?

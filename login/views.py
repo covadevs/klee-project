@@ -9,3 +9,11 @@ def login(request):
         }
 
     return render(request, 'login.jade', context=context_dict)
+
+def createAccount(request):
+    context_dict = {
+        'title': 'Create a new Klee account'
+    }
+
+    return render(request, 'new-account.jade', context=context_dict)
+

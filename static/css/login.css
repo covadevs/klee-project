@@ -13,6 +13,7 @@ a:hover {
     transition: 200ms;
     color: #B00040;
 }
+
 .container {
     display: grid;
     grid-template-rows: 1fr 100px;
@@ -24,8 +25,9 @@ a:hover {
     align-items: center;
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: url("/static/images/klee.svg") 100px -110px no-repeat;
+    background-color: white;
 }
 
 body {
@@ -34,6 +36,7 @@ body {
     height: 600px;
     justify-content: center;
     align-items: center;
+    background-color: #424242;
 }
 
 .form-container {
