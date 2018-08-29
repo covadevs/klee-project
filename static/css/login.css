@@ -45,8 +45,8 @@ body {
     grid-template-columns: 300px;
     grid-template-areas:
     "title"
-    "username"
-    "password"
+    "id_login"
+    "id_senha"
     "signin";
     justify-content: center;
     align-items: center;
@@ -116,12 +116,12 @@ input[type=submit]:hover {
     grid-area:form
 }
 
-#username {
-    grid-area:username
+#id_login {
+    grid-area:id_login
 }
 
-#password {
-    grid-area:password
+#id_senha {
+    grid-area:id_senha
 }
 
 #signin {

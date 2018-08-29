@@ -1,0 +1,9 @@
+extends layout
+
+block head
+    link(rel="stylesheet", hred="/stylesheets/new-account.css")
+block body
+    form(action='{% url "new-account" %}', method='POST')
+        {% csrf_token %}
+        {{ form }}
+        input(type='submit', value='Sign Up')
