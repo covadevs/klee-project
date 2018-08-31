@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, logout
+from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 from django.http import HttpResponseRedirect
 from login.models import User_Profile
@@ -8,8 +8,11 @@ from login.forms import LoginForm
 from login.forms import AccountForm
 
 # Create your views here.
-
 def login(request):
+    user = request.user
+    if user.is_active:
+        return HttpResponseRedirect('/')
+
     if request.method == 'POST':
         form = LoginForm(request.POST)
 
@@ -21,7 +24,7 @@ def login(request):
 
             if user is not None:
                 auth_login(request, user)
-                return HttpResponseRedirect('/cardapio/')
+                return HttpResponseRedirect('/')
     else:
         form = LoginForm()
 
@@ -60,4 +63,5 @@ def createAccount(request):
     }
 
     return render(request, 'login/new-account.jade', context=context_dict)
+
 

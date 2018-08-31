@@ -67,11 +67,12 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
     transition: 200ms;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input[type=text]:hover {
     transition: 200ms;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input[type=password], select {
@@ -83,11 +84,12 @@ input[type=password], select {
     border-radius: 4px;
     box-sizing: border-box;
     transition: 200ms;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input[type=password]:hover {
     transition: 200ms;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input[type=submit] {
@@ -102,10 +104,16 @@ input[type=submit] {
     transition: 200ms;
     font-size: 20px;
     border: 1px solid black;
+    justify-self: center;
 }
 
 input[type=submit]:hover {
     transition: 200ms;
+    /* color: black;
+    background: transparent; */
+    /* width: 50%; */
+    /* border-radius: 20px; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     /* background-color: black;
     color: white; */
     /* color: #FB005B; */

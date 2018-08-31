@@ -16,7 +16,9 @@ class AccountForm(forms.Form):
             'placeholder': 'Username'
         }))
     
-    email = forms.EmailField()
+    email = forms.EmailField(widget = forms.EmailInput(attrs={
+        'placeholder': 'Email'
+    }))
 
     password = forms.CharField(
         max_length=50,

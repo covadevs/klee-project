@@ -1,9 +1,9 @@
-extends layout
+extends layout-login
 
 block head
     link(rel="stylesheet", hred="/stylesheets/new-account.css")
 block body
     form(action='{% url "new-account" %}', method='POST')
         {% csrf_token %}
-        {{ form }}
+        {{ form.as_p }}
         input(type='submit', value='Sign Up')
