@@ -2,9 +2,18 @@
     font-family: 'Open Sans';
 }
 
+.button-pointer {
+    cursor: pointer;
+}
+
+.button-icon {
+    width: 25px;
+    height: 25px;
+}
+
 #container{
     display: grid;
-    grid-template-columns: 150px repeat(2, 1fr);
+    grid-template-columns: 250px repeat(2, 1fr);
     grid-template-rows: 1fr 85vh;
     /* grid-gap: 10px; */
     grid-template-areas: 
@@ -18,8 +27,8 @@
     background-color: whitesmoke;
     margin-top: 10px;
     margin-left: 10px;
-    box-shadow: 0px 0px 2px 1px;
     justify-content: center;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
 }
 
 #topbar{
@@ -27,9 +36,11 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-area: topbar;
-    background-color: blueviolet;
+    background-color: #424242;
+    color: white;
     grid-template-areas: 
     "appname pic-profile";
+    /* box-shadow: 1px 1px 1px 1px #000000; */
 }
 
 #appname {
@@ -55,17 +66,28 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 50px);
     grid-area: sidebar;
-    background-color: #424242;
+    background-color: black;
     grid-template-areas: 
     "button_one"
     "button_two"
     "button_three"
     "button_four";
     color: white;
+    /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8) */
 }
 
 .content-sidebar {
-    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 50ms;
+}
+
+.content-sidebar:hover {
+    transition: 200ms;
+    color: black;
+    background-color: white;
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8)
 }
 
 .logo-style{

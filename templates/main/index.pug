@@ -10,12 +10,15 @@ block body
             #appname Home
             #pic-profile
         #sidebar
-            .content-sidebar#button_one button1
-            .content-sidebar#button_two button2
-            .content-sidebar#button_three button3
-            .content-sidebar#button_four button4
+            .button-pointer.content-sidebar#button_one
+                img(src='/static/images/klee.svg').button-icon
+                .button-name button1
+            .button-pointer.content-sidebar#button_two button2
+            .button-pointer.content-sidebar#button_three button3
+            .button-pointer.content-sidebar#button_four button4
         #content 
             span content
+
     h2 Klee
     if user.is_authenticated
         a(href='{% url "logout" %}') Logout
