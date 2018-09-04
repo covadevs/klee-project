@@ -6,6 +6,7 @@ from django.http import HttpResponseRedirect
 from login.models import User_Profile
 from login.forms import LoginForm
 from login.forms import AccountForm
+from django.contrib import messages
 
 # Create your views here.
 def login(request):
@@ -24,7 +25,10 @@ def login(request):
 
             if user is not None:
                 auth_login(request, user)
+                messages.success(request, 'Logged succefully!')
                 return HttpResponseRedirect('/')
+            else:
+                messages.error(request, 'Invalid user or password!')
     else:
         form = LoginForm()
 

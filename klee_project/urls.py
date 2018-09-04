@@ -21,5 +21,7 @@ urlpatterns = [
     path('', include('main.urls')),
     path('login/', include('login.urls')),
     path('logout/', include('logout.urls')),
+    path('notifications/', include('notify.urls', 'notifications')),
     path('admin/', admin.site.urls),
+
 ]

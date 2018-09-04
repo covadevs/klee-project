@@ -66,13 +66,13 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    transition: 200ms;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 300ms;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
-input[type=text]:hover {
-    transition: 200ms;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+input[type=text]:focus, input[type=text]:hover {
+    transition: 300ms;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6), 0 0 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input[type=password], select {
@@ -83,13 +83,13 @@ input[type=password], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    transition: 200ms;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 300ms;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
-input[type=password]:hover {
-    transition: 200ms;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+input[type=password]:focus, input[type=password]:hover {
+    transition: 300ms;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6), 0 0 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 input[type=submit] {

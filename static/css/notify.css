@@ -1,0 +1,58 @@
+.notification-container {
+    display: flex;
+    justify-content: right;
+    display: none;
+}
+.notification-box {
+    position: fixed;
+    top: 3%;
+    right: 1%;
+    width: 20%;
+    opacity: 0.9;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: verdana, 'open sans', sans-serif;
+    margin-bottom: 25px;
+    padding: 10px 14px 10px 44px;
+    box-shadow: 0px 1px 5px #999;
+}
+
+.position-box {
+    /* margin-bottom: auto;
+    margin-right: auto;    */
+}
+
+.notification-box:before {
+    font-family: FontAwesome;
+    font-size: 21px;
+    left: 14px;
+    position: absolute;
+}
+
+.success {
+    background-color: #2ecc71;
+}
+
+.success:before {
+    content: "\f00c";
+    margin-left: -2px;
+}
+
+.warning {
+    background-color: #e67e22;
+}
+
+.warning:befode {
+    content: "\f12a";
+    margin-left: 5px;
+}
+
+.error {
+    background-color: #e74c3c;
+}
+
+.error:before {
+    content: "\f00d";
+}

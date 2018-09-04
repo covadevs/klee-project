@@ -9,6 +9,16 @@
 .button-icon {
     width: 25px;
     height: 25px;
+    margin: 10px;
+}
+
+.button-name {
+    /* display: none; */
+}
+
+body {
+    display: none;
+    background-color: whitesmoke;
 }
 
 #container{
@@ -36,7 +46,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-area: topbar;
-    background-color: #424242;
+    background-color: #000000;
     color: white;
     grid-template-areas: 
     "appname pic-profile";
@@ -54,19 +64,43 @@
 #pic-profile {
     justify-self: right;
     grid-area: pic-profile;
+    position: relative;
     margin: 10px;
     border-radius: 50%;
-    background-color: white;
+    background-color: whitesmoke;
     width: 50px;
     height: 50px;
 }
+
+#pic-options {
+    color: black;
+    position: absolute;
+    margin-top: 10px;
+    top: 100%;
+    right: 0;
+    width: 100px;
+}
+
+.pic-options-content {
+    background-color: #FB005B;
+}
+
+.pic-options-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
+} 
 
 #sidebar{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 50px);
     grid-area: sidebar;
-    background-color: black;
+    background-color: #212121;
     grid-template-areas: 
     "button_one"
     "button_two"
@@ -80,9 +114,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 50ms;
+    transition: 200ms;
+    border-block-start: 1px solid #484848;
 }
 
+.content-sidebar:first-child {
+    border-block-start: none;
+}
+path {
+    fill: white;
+}
 .content-sidebar:hover {
     transition: 200ms;
     color: black;
@@ -100,7 +141,7 @@
 #logo {
     display: grid;
     grid-area: logo;
-    background: #424242;
+    background: #000000;
     justify-content: center;
 }
 
@@ -118,4 +159,21 @@
 
 #button_four {
     grid-area: button_four;
+}
+
+@media(max-width: 310px) {
+    #sidebar {
+        display: none;
+    }
+
+    #container {
+        grid-template-columns: 70px repeat(2, 1fr);
+        grid-template-areas: 
+        "logo topbar topbar"
+        "content content content";
+    }
+
+    #content {
+        margin-left: 0;
+    }
 }

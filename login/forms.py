@@ -3,7 +3,9 @@ from django import forms
 class LoginForm(forms.Form):
     login = forms.CharField(max_length=50, label='',
     widget=forms.TextInput(attrs={
-        'placeholder': 'Username or email'}))
+        'placeholder': 'Username or email',
+        'autofocus': 'true'
+        }))
     senha = forms.CharField(max_length=50,
     widget=forms.PasswordInput(attrs={
         'placeholder': 'Password'}), label='')
