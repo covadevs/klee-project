@@ -4,26 +4,27 @@ $(document).ready(function() {
     $('.notification-container').fadeIn('slow', function() {
         setTimeout(function() {
             $('.success').fadeOut('slow');
-        }, 1000);
+        }, 10000);
 
         setTimeout(function() {
             $('.warning').fadeOut('slow');
-        }, 1000);
+        }, 10000);
 
         setTimeout(function() {
             $('.error').fadeOut('slow');
-        }, 1000);
+        }, 10000);
 
         setTimeout(function() {
             $('.info').fadeOut('slow');
-        }, 1000);
+        }, 10000);
 
         setTimeout(function() {
             $('.debug').fadeOut('slow');
-        }, 1000);
+        }, 10000);
     });
 
     $('.success').on('click',function(){
+        $('.success').fadeIn('slow');
         $('.success').parent().attr('style', 'display:none;');
     });
 

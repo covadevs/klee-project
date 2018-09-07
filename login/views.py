@@ -41,12 +41,12 @@ def login(request):
 
 def createAccount(request):
     if request.method == 'POST':
-        form = AccountForm(request.POST)
+        form_new = AccountForm(request.POST)
         
         if form.is_valid():
-            login = form.cleaned_data['login']
-            email = form.cleaned_data['email']
-            password = form.cleaned_data['password']
+            login = form_new.cleaned_data['login']
+            email = form_new.cleaned_data['email']
+            password = form_new.cleaned_data['password']
 
             new_user = User.objects.create_user(
                 username=login, 
@@ -59,13 +59,15 @@ def createAccount(request):
 
             return HttpResponseRedirect('/login/')
     else:
-        form = AccountForm()
+        form_new = AccountForm()
 
     context_dict = {
-        'form': form,
+        'form_new': form_new,
         'title': 'Create a new Klee account'
     }
 
     return render(request, 'login/new-account.jade', context=context_dict)
+
+# def editUserAccount(request, userId):
 
 

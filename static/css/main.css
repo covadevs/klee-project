@@ -1,5 +1,27 @@
 * {
     font-family: 'Open Sans';
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+.classname {
+    animation-name: cssAnimation;
+    animation-duration:3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+    from {
+        -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(100px);
+    }
+    to {
+        -webkit-transform: rotate(0deg) scale(2) skew(0deg) translate(100px);
+    }
 }
 
 .button-pointer {
@@ -16,15 +38,23 @@
     /* display: none; */
 }
 
+.username {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vw;
+    cursor: auto;
+}
+
 body {
-    display: none;
-    background-color: whitesmoke;
+    /* display: none; */
+    background-color: #212121;
 }
 
 #container{
     display: grid;
     grid-template-columns: 250px repeat(2, 1fr);
-    grid-template-rows: 1fr 85vh;
+    grid-template-rows: 1fr 86vh;
     /* grid-gap: 10px; */
     grid-template-areas: 
     "logo topbar topbar"
@@ -35,10 +65,10 @@ body {
     display: grid;
     grid-area: content;
     background-color: whitesmoke;
-    margin-top: 10px;
-    margin-left: 10px;
+    /* margin-top: 10px;
+    margin-left: 10px; */
     justify-content: center;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.9);
 }
 
 #topbar{
@@ -72,42 +102,79 @@ body {
     height: 50px;
 }
 
-#pic-options {
-    color: black;
+
+
+#pic-options-container {
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px;
+    grid-auto-rows: 1fr;
+    /* border-radius: 10px; */
+    grid-gap: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.8);
+    background: #212121;
     position: absolute;
     margin-top: 10px;
     top: 100%;
     right: 0;
-    width: 100px;
+    width: 200px;
+    padding: 5px;
+    opacity: 0.9;
 }
+
+#pic-options-container::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    right: 10%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #212121 transparent;
+}
+
+/* .triangle-up {
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 25px solid white;
+    top: 100%;
+} */
 
 .pic-options-content {
-    background-color: #FB005B;
+    /* background: #FB005B; */
 }
 
-.pic-options-container {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    border-radius: 10px;
+.pic-options {
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: 1px solid #484848;
+}
+
+.pic-options:hover {
+    transition: 200ms;
+    color: black;
     background-color: white;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.8);
-} 
+}
 
 #sidebar{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 50px);
+    grid-auto-rows: 50px;
+    /* grid-template-rows: repeat(4, 50px); */
     grid-area: sidebar;
-    background-color: #212121;
     grid-template-areas: 
     "button_one"
     "button_two"
     "button_three"
     "button_four";
     color: white;
-    /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8) */
+    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8);
 }
 
 .content-sidebar {
@@ -115,34 +182,48 @@ body {
     align-items: center;
     justify-content: center;
     transition: 200ms;
+    background-color: #212121;
     border-block-start: 1px solid #484848;
 }
 
 .content-sidebar:first-child {
     border-block-start: none;
 }
-path {
-    fill: white;
-}
+
 .content-sidebar:hover {
     transition: 200ms;
     color: black;
     background-color: white;
-    box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8)
 }
 
 .logo-style{
     margin-top: auto;
     margin-bottom: auto;
-    width: 50px;
-    height: 50px;
+    width: 3vw;
+    height: 3vw;
+}
+
+.logo-name {
+    display: flex;
+    color: #FB005B;
+    font-size: 3vw;
+    margin-left: 1vw;
+    font-weight: 600;
+}
+
+.logo-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
 }
 
 #logo {
     display: grid;
+    position: relative;
     grid-area: logo;
     background: #000000;
-    justify-content: center;
 }
 
 #button_one {

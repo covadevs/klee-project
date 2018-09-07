@@ -19,13 +19,15 @@ class AccountForm(forms.Form):
         }))
     
     email = forms.EmailField(widget = forms.EmailInput(attrs={
-        'placeholder': 'Email'
+        'placeholder': 'Email',
+        'autocomplete': 'off'
     }))
 
     password = forms.CharField(
         max_length=50,
         label = '',
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Password'
+            'placeholder': 'Password',
+            'autocomplete': 'off'
         })
     )

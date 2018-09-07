@@ -44,18 +44,13 @@ function addItem(idItem, text, icon_path){
 }
 
 $(document).ready(function() {
-    let pic_options = document.getElementById('pic-options');
-
-    $('#pic-profile').on('mouseover', function() {
-        $('#pic-options').fadeIn('fast');
-        pic_options.style.display = 'grid';
-    });
-
-    $('#pic-profile').on('mouseleave',function() {
-        $('#pic-options').fadeOut('fast');
-    });
-
-    $('#pic-options').on('mouseover', function() {
-        $(this).stop(true, true).fadeOut();
-    });
+    let pic_options_container = document.getElementById('pic-options-container');
+        $('#pic-profile').on('click', function() {
+            if ($('#pic-options-container').css('display') === 'none') {
+                $('#pic-options-container').fadeIn('fast');
+                pic_options_container.style.display = 'grid';
+            } else if ($('#pic-options-container').css('display') === 'grid') {
+                $('#pic-options-container').fadeOut('fast');
+            }
+        });
 });
