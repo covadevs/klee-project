@@ -5,10 +5,11 @@ if(document.readyState === 'loading') {
 }
 
 function afterLoaded() {
-    addItem('button_one', 'Settings', '/static/images/settings.svg');
+    addItem('button_one', 'Settings', null);
     addItem('button_two', 'Button 2', null);
     addItem('button_three', 'Button 3', null);
     addItem('button_four', 'Button 4', null);
+    addItem('button_five', 'Button 5', null);
 }
 
 function addItem(idItem, text, icon_path){
@@ -47,6 +48,7 @@ $(document).ready(function() {
     let pic_options_container = document.getElementById('pic-options-container');
         $('#pic-profile').on('click', function() {
             if ($('#pic-options-container').css('display') === 'none') {
+                console.log('entrou');
                 $('#pic-options-container').fadeIn('fast');
                 pic_options_container.style.display = 'grid';
             } else if ($('#pic-options-container').css('display') === 'grid') {

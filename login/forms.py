@@ -29,5 +29,4 @@ class AccountForm(forms.Form):
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
             'autocomplete': 'off'
-        })
-    )
+        }))

@@ -1,11 +1,11 @@
 #id01.modal
-    form(action="#").modal-content.animate
+    form(action="{% url 'edit-user' user.pk %}", method="POST").modal-content.animate
         span(onclick="document.getElementById('id01').style.display = 'none'", title="Close").close &times;
         .imgcontainer
             img(src="/static/images/klee.svg", alt="Avatar").avatar
         .container
+            #id02
             {% csrf_token %}
-            {{ form.as_p }}
             button(type="submit").editbtn Edit
         div(style="background-color: white").container
             button(type="button" onclick="document.getElementById('id01').style.display = 'none'").cancelbtn Cancel

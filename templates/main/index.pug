@@ -10,10 +10,10 @@ block body
                 .logo-name Klee
         #topbar
             #appname Home
-            #pic-profile.button-pointer
+            #pic-profile.button-pointer.topbar-content
                 #pic-options-container
                     .username {{ user }}
-                    a(onclick="document.getElementById('id01').style.display='block'").pic-options.pic-options-content Profile
+                    a(onclick="loadEditForm('{% url 'edit-user' user.pk %}')").pic-options.pic-options-content Profile
                     a(href='{% url "logout" %}').pic-options.pic-options-content Logout
         #sidebar
         #content
