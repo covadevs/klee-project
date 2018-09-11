@@ -1,46 +1,31 @@
+let notifyDuration = 425000;
+
 $(document).ready(function() {
     $('body').fadeIn('slow');
 
-    $('.notification-container').fadeIn('slow', function() {
+    $('#notification-container').fadeIn('slow', function() {
         setTimeout(function() {
             $('.success').fadeOut('slow');
-        }, 10000);
+        }, notifyDuration);
 
         setTimeout(function() {
             $('.warning').fadeOut('slow');
-        }, 10000);
+        }, notifyDuration);
 
         setTimeout(function() {
             $('.error').fadeOut('slow');
-        }, 10000);
+        }, notifyDuration);
 
         setTimeout(function() {
             $('.info').fadeOut('slow');
-        }, 10000);
+        }, notifyDuration);
 
         setTimeout(function() {
             $('.debug').fadeOut('slow');
-        }, 10000);
-    });
-
-    $('.success').on('click',function(){
-        $('.success').fadeIn('slow');
-        $('.success').parent().attr('style', 'display:none;');
-    });
-
-    $('.warning').on('click',function(){
-        $('.waning').parent().attr('style', 'display:none;');
-    });
-
-    $('.error').on('click',function(){
-        $('.error').parent().attr('style', 'display:none;');
-    });
-
-    $('.info').on('click',function(){
-        $('.info').parent().attr('style', 'display:none;');
-    });
-
-    $('.debug').on('click',function(){
-        $('.debug').parent().attr('style', 'display:none;');
+        }, notifyDuration);
     });
 });
+
+function closeNotification() {
+    $('.notification-box').fadeOut('fast');
+}

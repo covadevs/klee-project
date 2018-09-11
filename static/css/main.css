@@ -63,16 +63,19 @@ a {
     grid-template-areas: 
     "logo topbar topbar"
     "sidebar content content";
-    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
+
 }
 
 #content {
     display: grid;
     grid-area: content;
-    background-color: whitesmoke;
+    background-color: white;
     /* margin-top: 10px;
     margin-left: 10px; */
     justify-content: center;
+    border-bottom-right-radius: 5px;
     /* box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.9); */
 }
 
@@ -85,6 +88,7 @@ a {
     color: white;
     grid-template-areas: 
     "appname pic-profile";
+    border-top-right-radius: 5px;
     /* box-shadow: 1px 1px 1px 1px #000000; */
 }
 
@@ -182,6 +186,7 @@ a {
     color: white;
     background-color: #212121;
     justify-items: center;
+    border-bottom-left-radius: 5px;
     /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8); */
 }
 
@@ -191,18 +196,19 @@ a {
     justify-content: center;
     transition: 200ms;
     background-color: #212121;
+    color: white;
     border-block-start: 1px solid #484848;
     width: 90%;
 }
 
 .content-sidebar:first-child {
-    border-block-start: none;
+    border: none;
 }
 
 .content-sidebar:hover {
     transition: 200ms;
     color: black;
-    background-color: whitesmoke;
+    background-color: white;
     width: 100%;
 }
 
@@ -233,7 +239,8 @@ a {
     display: grid;
     position: relative;
     grid-area: logo;
-    background: #000000;
+    background: #212121;
+    border-top-left-radius: 5px;
 }
 
 @media(max-width: 310px) {

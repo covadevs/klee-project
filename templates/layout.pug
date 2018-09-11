@@ -13,9 +13,12 @@ html
         script(src='/static/javascripts/notify.js')
         block head-layout
     body
-        .notification-container
+        #notification-container
             if messages
                 for message in messages
                     if message.tags
-                        span(class="#{message.tags} notification-box position-box") #{message}
+                        div(class="#{message.tags} notification-box position-box") 
+                            .message #{message}
+                            div(onclick="closeNotification()").closebtn &times;
+                            .notification-progress-bar
         block body-layout

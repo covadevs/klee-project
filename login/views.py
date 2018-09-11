@@ -43,21 +43,24 @@ def createAccount(request):
     if request.method == 'POST':
         form_new = AccountForm(request.POST)
         
-        if form.is_valid():
+        if form_new.is_valid():
             login = form_new.cleaned_data['login']
             email = form_new.cleaned_data['email']
             password = form_new.cleaned_data['password']
 
-            new_user = User.objects.create_user(
-                username=login, 
-                email=email, 
-                password=password)
-            new_user.save()
+            if not User.objects.filter(username=login).exists():
+                new_user = User.objects.create_user(
+                    username=login, 
+                    email=email, 
+                    password=password)
+                new_user.save()
 
-            new_profile = User_Profile(user=new_user)
-            new_profile.save()
+                new_profile = User_Profile(user=new_user)
+                new_profile.save()
 
-            return HttpResponseRedirect('/login/')
+                return HttpResponseRedirect('/login/')
+            else:
+                messages.error(request, 'Username already exists')
     else:
         form_new = AccountForm()
 
