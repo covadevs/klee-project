@@ -27,16 +27,17 @@ a:hover {
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: url("/static/images/klee.svg") 100px -110px no-repeat;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.90);
 }
 
 body {
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 648px;
     justify-content: center;
     align-items: center;
-    background-color: #424242;
+    background-color: none;
+    background-image: url("/static/images/login/login.jpg");
 }
 
 .form-container {
