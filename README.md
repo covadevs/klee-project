@@ -1,2 +1,2 @@
-# klee-project
+# Klee
 Repositório dedicado ao Klee
