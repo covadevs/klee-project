@@ -11,3 +11,10 @@ def main(request):
     
     return render(request, 'main/index.pug', context=context_dict)
 
+@login_required
+def settings(request):
+    context_dict = {
+        'title': 'Klee'
+    }
+    return render(request, 'content/settings.pug', context=context_dict)
+

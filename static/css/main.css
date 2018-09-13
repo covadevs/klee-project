@@ -5,6 +5,7 @@
 
 a {
     text-decoration: none;
+    border: none;
 }
 
 #settings {
@@ -65,7 +66,6 @@ a {
     "sidebar content content";
     border-radius: 5px;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
-
 }
 
 #content {
@@ -98,6 +98,7 @@ a {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 10px;
+    color: white;
 }
 
 #pic-profile {
@@ -197,7 +198,7 @@ a {
     transition: 200ms;
     background-color: #212121;
     color: white;
-    border-block-start: 1px solid #484848;
+    border-top: 1px solid #484848;
     width: 90%;
 }
 
@@ -206,6 +207,8 @@ a {
 }
 
 .content-sidebar:hover {
+    backface-visibility: hidden;
+    /* transform: translateX(0) scale(1.0, 1.0); */
     transition: 200ms;
     color: black;
     background-color: white;

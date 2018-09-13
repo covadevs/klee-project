@@ -5,7 +5,7 @@ if(document.readyState === 'loading') {
 }
 
 function afterLoaded() {
-    addItem('button_one', 'Settings', null);
+    addItem('button_one', 'Income', null);
     addItem('button_two', 'Button 2', null);
     addItem('button_three', 'Button 3', null);
     addItem('button_four', 'Button 4', null);
@@ -14,6 +14,8 @@ function afterLoaded() {
 
 function addItem(idItem, text, icon_path){
     let sidebar = document.getElementById('sidebar');
+    let link = document.createElement('a');
+
     let item = document.createElement('div');
     
     let id = document.createAttribute('id');
@@ -22,8 +24,14 @@ function addItem(idItem, text, icon_path){
     let classes = document.createAttribute('class');
     classes.value = 'button-pointer content-sidebar';
     
-    item.setAttributeNode(id);
-    item.setAttributeNode(classes);
+    // let url = document.createAttribute("href");
+    link.href = 'settings';
+    
+
+    // link.setAttributeNode(url);
+    link.appendChild(item);
+    link.setAttributeNode(id);
+    link.setAttributeNode(classes);
     
     if(icon_path !== null) {
         let img = document.createElement('img');
@@ -39,9 +47,9 @@ function addItem(idItem, text, icon_path){
     }
 
     let name = document.createTextNode(text);
-    item.appendChild(name);
+    link.appendChild(name);
 
-    sidebar.appendChild(item);
+    sidebar.appendChild(link);
 }
 
 $(document).ready(function() {

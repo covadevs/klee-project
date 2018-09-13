@@ -10,7 +10,7 @@ block body
                 img(src='/static/images/klee.svg').logo-style 
                 .logo-name Klee
         #topbar
-            #appname Home
+            a(href="{% url 'main' %}")#appname Home
             #pic-profile.button-pointer.topbar-content
                 #pic-options-container
                     .username {{ user }}
@@ -19,4 +19,5 @@ block body
                     a(href='{% url "logout" %}').pic-options.pic-options-content Logout
         #sidebar
         #content
-            block content
+            #content-container
+                block content
