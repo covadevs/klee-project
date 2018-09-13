@@ -2,7 +2,9 @@ extends layout-newaccount
 
 block head
 block body
-    form(action='{% url "new-account" %}', method='POST')
-        {% csrf_token %}
-        {{ form_new }}
-        input(type='submit', value='Sign Up')
+    .container
+        form(action='{% url "new-account" %}', method='POST')#form.form-container
+            span.login-title Create account
+            {% csrf_token %}
+            {{ form_new }}
+            input(type='submit', value='Sign Up')

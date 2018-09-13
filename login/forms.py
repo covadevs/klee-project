@@ -18,7 +18,9 @@ class AccountForm(forms.Form):
             'placeholder': 'Username'
         }))
     
-    email = forms.EmailField(widget = forms.EmailInput(attrs={
+    email = forms.EmailField(
+        label='',
+        widget = forms.EmailInput(attrs={
         'placeholder': 'Email',
         'autocomplete': 'off'
     }))
