@@ -39,8 +39,8 @@
 .notification-progress-bar {
     grid-area: progressbar;
     width: 100%;
-    background-color: inherit;
-    overflow: hidden;
+    background-color: black;
+    opacity: 0.5;
     height: 5px;
     animation-name: progress-bar;
     animation-duration: 5s;
