@@ -3,6 +3,7 @@ extends layout-main
 block head
 block body
     include ../login/profile.pug
+    include ../login/change-password.pug
     #container
         #logo
             .logo-container
@@ -14,7 +15,7 @@ block body
                 #pic-options-container
                     .username {{ user }}
                     a(onclick="loadEditForm('{% url 'edit-user' user.pk %}')").pic-options.pic-options-content Profile
-                    //- a(onclick="loadChangePasswordForm('{% url 'change-password' user.pk %}')").pic-options.pic-options-content Change password
+                    a(onclick="loadChangePasswordForm('{% url 'change-password' user.pk %}')").pic-options.pic-options-content Change password
                     a(href='{% url "logout" %}').pic-options.pic-options-content Logout
         #sidebar
         #content

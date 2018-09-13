@@ -1,10 +1,10 @@
-#id01.modal
+#modalProfile.modal
     form(action="{% url 'edit-user' user.pk %}", method="POST").modal-content.animate
-        span(onclick="document.getElementById('id01').style.display = 'none'", title="Close").close &times;
+        span(onclick="document.getElementById('modalProfile').style.display = 'none'", title="Close").close &times;
         .imgcontainer
             img(src="/static/images/klee.svg", alt="Avatar").avatar
         .container
-            #id02
+            #modalProfileContainer
         .container
             {% csrf_token %}
             button(type="submit").editbtn Edit

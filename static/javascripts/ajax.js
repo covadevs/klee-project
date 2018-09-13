@@ -1,7 +1,7 @@
 let csrftoken = Cookies.get('csrftoken');
 
 function loadEditForm(url) {
-    document.getElementById('id01').style.display = 'block';
+    document.getElementById('modalProfile').style.display = 'block';
     $.ajax({
         url: url,
         type: 'GET',
@@ -10,11 +10,31 @@ function loadEditForm(url) {
         },
         timeout:0,
         success: function(data) {
-            let id_username = $('#id_username').length;
-            let id_email = $('#id_email').length;
-            if ((id_username == 0 || id_email == 0)) {
-                $('#id02').append(data);
-            }
+            cleanElement('modalProfileContainer');
+            $('#modalProfileContainer').append(data);
         }
     });
+}
+
+function loadChangePasswordForm(url) {
+    document.getElementById('modalChangePassword').style.display = 'block';
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: {
+            csrfmiddlewaretoken: csrftoken,
+        },
+        timeout: 0,
+        success: function(data) {
+            cleanElement('changePasswordContainer');
+            $('#changePasswordContainer').append(data);
+        }
+    });
+}
+
+function cleanElement(id) {
+    let id_element = document.getElementById(id);
+    while(id_element.firstChild) {
+        id_element.removeChild(id_element.firstChild);
+    }
 }
