@@ -2,18 +2,6 @@
     font-family: 'Open Sans';
 }
 
-a {
-    transition: 200ms;
-    text-decoration: none;
-    font-weight: 600;
-    color: #FB005B;
-}
-
-a:hover {
-    transition: 200ms;
-    color: #B00040;
-}
-
 .container {
     display: grid;
     grid-template-rows: 1fr 100px;
@@ -26,7 +14,7 @@ a:hover {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background: url("/static/images/klee.svg") 100px -110px no-repeat;
+    background: url("/static/images/logo4.jpeg") -190px -575px no-repeat;
     background-color: rgba(255, 255, 255, 0.90);
 }
 
@@ -58,7 +46,8 @@ body {
     grid-area: title;
     text-align: center;
     font-size: 40px;
-    font-weight: bold;
+    font-weight: bolder;
+    color: #105669;
 }
 
 input[type=text], select {
@@ -114,7 +103,7 @@ input[type=email]:focus, input[type=email]:hover {
 
 input[type=submit] {
     width: 100%;
-    background-color: black;
+    background-color:#203a42;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -123,7 +112,7 @@ input[type=submit] {
     cursor: pointer;
     transition: 200ms;
     font-size: 20px;
-    border: 1px solid black;
+    border: 1px solid #203a42;
     justify-self: center;
 }
 
