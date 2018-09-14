@@ -8,8 +8,6 @@ function afterLoaded() {
     addItem('button_one', 'Income', null);
     addItem('button_two', 'Button 2', null);
     addItem('button_three', 'Button 3', null);
-    addItem('button_four', 'Button 4', null);
-    addItem('button_five', 'Button 5', null);
 }
 
 function addItem(idItem, text, icon_path){
