@@ -1,4 +1,4 @@
-let notifyDuration = 425000;
+let notifyDuration = 4500;
 
 $(document).ready(function() {
     $('body').fadeIn('slow');

@@ -73,9 +73,12 @@ a {
     background-color: white;
     /* margin-top: 10px;
     margin-left: 10px; */
-    justify-content: center;
     border-bottom-right-radius: 5px;
     /* box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.9); */
+}
+
+#welcome {
+    justify-self: center;
 }
 
 #topbar{
@@ -198,8 +201,7 @@ a {
     background-color: #212121;
     color: white;
     border-top: 1px solid #484848;
-    width: 60%;
-    -webkit-transform: translate3D(0, 0, 0);
+    width: 100%;
 }
 
 .content-sidebar:first-child {
@@ -211,9 +213,6 @@ a {
     transition: 200ms;
     color: black;
     background-color: white;
-    width: 100%;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translate3D(0, 0, 0);
 }
 
 .logo-style{

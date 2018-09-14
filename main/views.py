@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django_tables2 import RequestConfig
+from klee_income.models import Income
+from klee_income.tables import IncomeTable
 
 # Create your views here.
 
@@ -12,9 +15,13 @@ def main(request):
     return render(request, 'main/index.pug', context=context_dict)
 
 @login_required
-def settings(request):
+def incomes(request):
+    table = IncomeTable(Income.objects.all())
+    RequestConfig(request).configure(table)
+
     context_dict = {
+        'table': table,
         'title': 'Klee'
     }
-    return render(request, 'content/settings.pug', context=context_dict)
+    return render(request, 'content/income-content.pug', context=context_dict)
 

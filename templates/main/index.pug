@@ -4,6 +4,7 @@ block head
 block body
     include ../login/profile.pug
     include ../login/change-password.pug
+    include ../klee-income/create-income.pug
     #container
         #logo
             .logo-container
@@ -19,5 +20,5 @@ block body
                     a(href='{% url "logout" %}').pic-options.pic-options-content Logout
         #sidebar
         #content
-            #content-container
-                block content
+            h1.welcome Welcome to Klee
+            block content

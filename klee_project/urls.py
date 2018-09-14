@@ -22,5 +22,6 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('logout/', include('logout.urls')),
     path('user/', include('user.urls')),
+    path('income/', include('klee_income.urls')),
     path('admin/', admin.site.urls),
 ]

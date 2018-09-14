@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tables2',
     'login',
     'main',
     'user',
-    'logout'
+    'logout',
+    'klee_income',
 ]
 
 MIDDLEWARE = [

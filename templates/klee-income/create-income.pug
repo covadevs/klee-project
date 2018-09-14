@@ -1,0 +1,10 @@
+#modalCreateIncome.modal
+    form(action="{% url 'create-income' user.pk %}", method="POST").modal-content.animate
+        span(onclick="document.getElementById('modalCreateIncome').style.display = 'none'", title="Close").close &times;
+        .imgcontainer
+            img(src="/static/images/klee.svg", alt="Avatar").avatar
+        .container
+            #createIncomeContainer
+        .container
+            {% csrf_token %}
+            button(type="submit").editbtn Create income

@@ -25,13 +25,13 @@ function addItem(idItem, text, icon_path){
     classes.value = 'button-pointer content-sidebar';
     
     // let url = document.createAttribute("href");
-    link.href = 'settings';
+    link.href = 'incomes';
     
 
     // link.setAttributeNode(url);
     // link.appendChild(item);
-    item.setAttributeNode(id);
-    item.setAttributeNode(classes);
+    link.setAttributeNode(id);
+    link.setAttributeNode(classes);
     
     if(icon_path !== null) {
         let img = document.createElement('img');
@@ -48,8 +48,8 @@ function addItem(idItem, text, icon_path){
 
     let name = document.createTextNode(text);
     link.appendChild(name);
-    item.appendChild(link);
-    sidebar.appendChild(item);
+    link.appendChild(item);
+    sidebar.appendChild(link);
 }
 
 $(document).ready(function() {

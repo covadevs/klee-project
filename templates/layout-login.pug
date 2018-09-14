@@ -1,5 +1,6 @@
 extends layout
-    
+block loads
+    - load render_table from django_tables2
 block head-layout
     link(href='/static/css/login.css', rel='stylesheet')
     block head
