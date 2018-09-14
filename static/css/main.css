@@ -52,8 +52,7 @@ a {
 }
 
 /* body {
-    display: none;
-    background-color: #212121;
+    transform: translate3d(0, 0, 0);
 } */
 
 #container{
@@ -199,20 +198,22 @@ a {
     background-color: #212121;
     color: white;
     border-top: 1px solid #484848;
-    width: 90%;
+    width: 60%;
+    -webkit-transform: translate3D(0, 0, 0);
 }
 
 .content-sidebar:first-child {
     border: none;
+    -webkit-backface-visibility: hidden;
 }
 
 .content-sidebar:hover {
-    backface-visibility: hidden;
-    /* transform: translateX(0) scale(1.0, 1.0); */
     transition: 200ms;
     color: black;
     background-color: white;
     width: 100%;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3D(0, 0, 0);
 }
 
 .logo-style{

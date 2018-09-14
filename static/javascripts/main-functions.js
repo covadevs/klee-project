@@ -29,9 +29,9 @@ function addItem(idItem, text, icon_path){
     
 
     // link.setAttributeNode(url);
-    link.appendChild(item);
-    link.setAttributeNode(id);
-    link.setAttributeNode(classes);
+    // link.appendChild(item);
+    item.setAttributeNode(id);
+    item.setAttributeNode(classes);
     
     if(icon_path !== null) {
         let img = document.createElement('img');
@@ -48,8 +48,8 @@ function addItem(idItem, text, icon_path){
 
     let name = document.createTextNode(text);
     link.appendChild(name);
-
-    sidebar.appendChild(link);
+    item.appendChild(link);
+    sidebar.appendChild(item);
 }
 
 $(document).ready(function() {
