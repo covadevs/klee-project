@@ -2,6 +2,21 @@
     font-family: 'Open Sans';
 }
 
+a {
+    transition: 200ms;
+    text-decoration: none;
+    font-weight: 600;
+    color: #203a42;
+    text-align: center;
+    margin-top: 14px;
+
+}
+
+a:hover {
+    transition: 200ms;
+    color: #105669;
+}
+
 .container {
     display: grid;
     grid-template-rows: 1fr 100px;

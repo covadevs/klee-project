@@ -4,6 +4,7 @@
 p{
     color: white;
     font-weight: bold;
+    margin-top: -40px;
 }
 
 a {
@@ -11,6 +12,7 @@ a {
     text-decoration: none;
     font-weight: 600;
     color: #203a42;
+    margin-top: -40px;
 }
 
 a:hover {
