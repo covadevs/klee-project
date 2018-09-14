@@ -72,7 +72,7 @@ a {
     display: grid;
     grid-area: content;
     background-color: white;
-    background-image: url(/static/images/login/fundo3.jpg);
+    /*background-image: url(/static/images/login/fundo3.jpg);*/
     /* margin-top: 10px;
     margin-left: 10px; */
     justify-content: center;
