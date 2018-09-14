@@ -19,7 +19,7 @@ def createIncome(request, id):
             income = Income(user=user, value=value)
             income.save()
             messages.success(request, 'Income created!')
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect('/incomes')
     else:
         form = CreateIncomeForm()
 

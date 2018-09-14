@@ -33,6 +33,8 @@
     width: 100%;
     padding: 10px;
     text-decoration: none;
+    height: 400px;
+    overflow: auto;
 }
 
 tr:nth-child(even){background-color: #f2f2f2;}
@@ -43,8 +45,25 @@ th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #FB005B;
+    background-color: #212121;
     color: white;
+}
+
+tbody {
+    height: 150px;
+    overflow: auto;
+}
+
+th > a {
+    text-decoration: none;
+    color: white;
+    padding-left: 10px;
+}
+
+tr > td {
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 tr {
@@ -56,4 +75,6 @@ tr {
 table {
     border-collapse: collapse;
     width: 100%;    
+    height: 150px;
+    overflow: auto;
 }

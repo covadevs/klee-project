@@ -17,7 +17,10 @@ function addItem(idItem, text, icon_path){
     let link = document.createElement('a');
 
     let item = document.createElement('div');
-    
+
+    let onclick = document.createAttribute('onclick');
+    onclick.value = "hideWelcome()";
+
     let id = document.createAttribute('id');
     id.value = idItem;
     
