@@ -72,6 +72,7 @@ a {
     display: grid;
     grid-area: content;
     background-color: white;
+    background-image: url(/static/images/login/fundo3.jpg);
     /* margin-top: 10px;
     margin-left: 10px; */
     justify-content: center;
@@ -84,7 +85,7 @@ a {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-area: topbar;
-    background-color: #212121;
+    background-color: #234853;
     color: white;
     grid-template-areas: 
     "appname pic-profile";
@@ -184,7 +185,7 @@ a {
     /* grid-template-rows: repeat(4, 50px); */
     grid-area: sidebar;
     color: white;
-    background-color: #212121;
+    background-color: #234853;
     justify-items: center;
     border-bottom-left-radius: 5px;
     /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8); */
@@ -195,7 +196,7 @@ a {
     align-items: center;
     justify-content: center;
     transition: 200ms;
-    background-color: #212121;
+    background-color: #234853;
     color: white;
     border-block-start: 1px solid #484848;
     width: 90%;
@@ -221,7 +222,7 @@ a {
 
 .logo-name {
     display: flex;
-    color: #FB005B;
+    color: #ffffff;
     font-size: 3vw;
     margin-left: 1vw;
     font-weight: 600;
@@ -239,7 +240,7 @@ a {
     display: grid;
     position: relative;
     grid-area: logo;
-    background: #212121;
+    background: #234853;
     border-top-left-radius: 5px;
 }
 
