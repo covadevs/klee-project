@@ -13,6 +13,7 @@ class ChangePasswordForm(forms.Form):
         label = '',
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
+            'autofocus': 'true'
         }))
 
         new_password = forms.CharField(

@@ -41,6 +41,9 @@ def changePassword(request, id):
 
                 messages.success(request, 'Password changed!')
                 return HttpResponseRedirect('/')
+            else :
+                messages.error(request, 'Same password!')
+                return HttpResponseRedirect('/')
 
     else:
         form = ChangePasswordForm()

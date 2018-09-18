@@ -49,10 +49,10 @@ th {
     color: white;
 }
 
-tbody {
+/* tbody {
     height: 150px;
     overflow: auto;
-}
+} */
 
 th > a {
     text-decoration: none;

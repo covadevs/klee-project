@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from klee_income.models import Income
 # Create your models here.
 
 class User_Profile(models.Model):
