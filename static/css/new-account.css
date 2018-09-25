@@ -45,7 +45,7 @@ body {
 
 .form-container {
     display: grid;
-    grid-template-rows: 150px repeat(3, 1fr);
+    grid-template-rows: 124px repeat(3, 1fr);
     grid-template-columns: 300px;
     grid-template-areas:
     "title"
@@ -63,6 +63,7 @@ body {
     font-size: 40px;
     font-weight: bolder;
     color: #105669;
+    margin-top: 40px;
 }
 
 input[type=text], select {
