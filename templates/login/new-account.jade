@@ -8,4 +8,4 @@ block body
             {% csrf_token %}
             {{ form_new }}
             input(type='submit', value='Sign Up')
-            a(href="#login") Already have an account?
+            a(href="{% url 'login' %}") Already have an account?

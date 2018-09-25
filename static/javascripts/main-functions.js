@@ -5,7 +5,7 @@ if(document.readyState === 'loading') {
 }
 
 function afterLoaded() {
-    addItem('button_one', 'Settings', null);
+    addItem('button_one', 'INCOME', null);
     addItem('button_two', 'Button 2', null);
     addItem('button_three', 'Button 3', null);
     addItem('button_four', 'Button 4', null);
