@@ -32,3 +32,11 @@ class AccountForm(forms.Form):
             'placeholder': 'Password',
             'autocomplete': 'off'
         }))
+
+class RecoverForm(forms.Form):
+    email = forms.EmailField(
+        label='',
+        widget = forms.EmailInput(attrs={
+        'placeholder': 'Email',
+        'autocomplete': 'off'
+    }))
