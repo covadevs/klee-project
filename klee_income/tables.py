@@ -4,4 +4,5 @@ from klee_income.models import Income
 class IncomeTable(tables.Table):
     class Meta:
         model = Income
-        template_name = 'django_tables2/bootstrap.html'
+        fields = ['value']
+        empty_text = 'No data'

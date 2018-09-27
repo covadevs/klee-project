@@ -1,5 +1,5 @@
 
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=number], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -11,12 +11,15 @@ input[type=text], input[type=password] {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
-input[type=text]:focus, input[type=text]:hover, input[type=password]:hover, input[type=password]:focus {
+input[type=text]:focus, input[type=text]:hover, 
+input[type=password]:hover, input[type=password]:focus,
+input[type=number]:hover, input[type=number]:focus,
+select:hover, select:focus {
     transition: 300ms;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6), 0 0 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-input[type=email], input[type=password] {
+input[type=email], input[type=password], input[type=number], select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

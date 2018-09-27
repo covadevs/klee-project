@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'user',
     'logout',
     'klee_income',
+    'klee_consumption',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,9 @@
+extends main/index
+- load render_table from django_tables2
+block content
+    #content-container
+        .content-style#content-manager-bar
+            a(onclick="loadConsumptionForm('{% url 'create-consumption' %}')")
+                img(src="/static/images/plus.svg").content-manager-item
+        .content-style#content-table
+            - render_table table

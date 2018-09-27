@@ -12,6 +12,7 @@ function loadEditForm(url) {
         success: function(data) {
             cleanElement('modalProfileContainer');
             $('#modalProfileContainer').append(data);
+            document.getElementById('id_username').focus();
         }
     });
 }
@@ -28,6 +29,7 @@ function loadChangePasswordForm(url) {
         success: function(data) {
             cleanElement('changePasswordContainer');
             $('#changePasswordContainer').append(data);
+            document.getElementById('id_password').focus();
         }
     });
 }
@@ -44,7 +46,27 @@ function loadIncomeForm(url) {
         success: function(data) {
             cleanElement('createIncomeContainer');
             $('#createIncomeContainer').append(data);
+            document.getElementById('id_value').focus();
         }
+    })
+}
+
+function loadConsumptionForm(url) {
+    console.log('entrou')
+    document.getElementById('modalCreateConsumption').style.display = 'block';
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: {
+            csrfmiddlewaretoken: csrftoken,
+        },
+        timeout: 0,
+        success: function(data) {
+            cleanElement('createConsumptionContainer');
+            $('#createConsumptionContainer').append(data);
+            document.getElementById('id_value').focus();
+        },
+        async: false
     })
 }
 
