@@ -11,6 +11,30 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import moneyed
+from moneyed.localization import _FORMATTER
+from decimal import ROUND_HALF_EVEN
+
+# BRL = moneyed.add_currency(
+#     code='BRL',
+#     numeric='068',
+#     name='Real',
+#     countries=('BRASIL', )
+# )
+
+# # Currency Formatter will output 2.000,00 Bs.
+# _FORMATTER.add_sign_definition(
+#     'default',
+#     BRL,
+#     prefix=u'R$'
+# )
+
+# _FORMATTER.add_formatting_definition(
+#     'pt_BR',
+#     group_size=3, group_separator=".", decimal_point=",",
+#     positive_sign="",  trailing_positive_sign="",
+#     negative_sign="-", trailing_negative_sign="",
+#     rounding_method=ROUND_HALF_EVEN)
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -46,6 +70,7 @@ INSTALLED_APPS = [
     'logout',
     'klee_income',
     'klee_consumption',
+    'djmoney'
 ]
 
 MIDDLEWARE = [
@@ -141,3 +166,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR]
+
+CURRENCIES = ('USD', 'BRL')
+
+

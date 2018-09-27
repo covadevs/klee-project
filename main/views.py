@@ -18,20 +18,24 @@ def main(request):
 
 @login_required
 def incomes(request):
-    table = IncomeTable(Income.objects.filter(pk=request.user.id))
+    income = Income.objects.filter(pk=request.user.id)
+
+    table = IncomeTable(income)
     RequestConfig(request).configure(table)
 
     context_dict = {
         'table': table,
         'title': 'Klee'
     }
+
     return render(request, 'content/income-content.pug', context=context_dict)
 
 @login_required
 def consumptions(request):
-    table = ConsumptionTable(Consumption.objects.filter(user=request.user.id))
+    consumptionsUser = Consumption.objects.filter(user=request.user.id)
+
+    table = ConsumptionTable(consumptionsUser)
     RequestConfig(request).configure(table)
-    print(table)
     context_dict = {
         'table': table,
         'title': 'Klee'

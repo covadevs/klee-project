@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from djmoney.models.fields import MoneyField
 # Create your models here.
 
 class Income(models.Model):
@@ -9,7 +10,10 @@ class Income(models.Model):
         primary_key=True,
     )
 
-    value = models.DecimalField(max_digits=19, decimal_places=2)
+    value = MoneyField(max_digits=14, decimal_places=4, default_currency='EUR')
 
     def __repr__(self):
         return str(self.value)
+
+    def setValue(self, value):
+        self.value = value
