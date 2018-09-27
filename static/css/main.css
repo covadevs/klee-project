@@ -214,7 +214,7 @@ body {
 
 .content-sidebar:hover {
     color: black;
-    background-color: white;
+    background-color: red;
     width: 100%;
 }
 
