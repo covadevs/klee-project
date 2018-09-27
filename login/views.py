@@ -33,7 +33,7 @@ def login(request):
         form = LoginForm()
 
     context_dict = {
-        'title': 'Klee',
+        'title': 'Klee - Taking good care of your money',
         'form': form
     }
 
