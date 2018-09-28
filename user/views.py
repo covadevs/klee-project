@@ -35,7 +35,6 @@ def changePassword(request, id):
             password = form.cleaned_data['password']
             new_password = form.cleaned_data['new_password']
 
-        if password == user.password:
             if password != new_password:
                 user.set_password(new_password)
                 user.save()
@@ -45,10 +44,6 @@ def changePassword(request, id):
             else :
                 messages.error(request, 'Same password!')
                 return HttpResponseRedirect('/')
-        else:
-            messages.error(request, 'Wrong password!')
-            return HttpResponseRedirect('/')
-
     else:
         form = ChangePasswordForm()
 
