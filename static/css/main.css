@@ -188,7 +188,8 @@ body {
     /* grid-template-rows: repeat(4, 50px); */
     grid-area: sidebar;
     color: white;
-    background-color: #234853;
+    background-image: url('/static/images/teste.svg');
+    /*background-color: #234853;*/
     justify-items: center;
     border-bottom-left-radius: 5px;
     /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8); */
