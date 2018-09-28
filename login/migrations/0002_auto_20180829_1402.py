@@ -22,9 +22,10 @@ class Migration(migrations.Migration):
         migrations.DeleteModel(
             name='User',
         ),
-        migrations.AddField(
-            model_name='user_profile',
-            name='user',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.DO_NOTHING, to=settings.AUTH_USER_MODEL),
+
+         migrations.AddField(
+            model_name='User_Profile',
+            name='foto',
+            field=models.ImageField(blank=True, upload_to='foto_perfil/'),
         ),
     ]

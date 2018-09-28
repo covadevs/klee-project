@@ -31,4 +31,11 @@ class AccountForm(forms.Form):
         widget=forms.PasswordInput(attrs={
             'placeholder': 'Password',
             'autocomplete': 'off'
+
+
         }))
+    class UsuarioProfileForm(ModelForm):
+    class Meta:
+        model =  User_Profile
+        fields = ['foto']
+

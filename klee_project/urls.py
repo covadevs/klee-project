@@ -23,5 +23,6 @@ urlpatterns = [
     path('logout/', include('logout.urls')),
     path('user/', include('user.urls')),
     path('income/', include('klee_income.urls')),
+    path('despesas/', include('despesas.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -75,6 +75,19 @@ def createAccount(request):
 
     return render(request, 'login/new-account.jade', context=context_dict)
 
-# def editUserAccount(request, userId):
+
+
+
+def editFoto(request):
+    if(request.method == 'POST'):
+        foto = User.get(user = request.user)
+        form = AccountForm(request.POST, request.FILES, instance = foto)
+        if(form.is_valid()):
+            form.save()
+            return HttpResponseRedirect('/Perfil/')
+
+
+
+
 
 
