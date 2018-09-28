@@ -1,8 +1,9 @@
 #modalCreateConsumption.modal
     form(action="{% url 'create-consumption' %}", method="POST").modal-content.animate
         span(onclick="document.getElementById('modalCreateConsumption').style.display = 'none'", title="Close").close &times;
-        .imgcontainer
-            img(src="/static/images/klee.svg", alt="Avatar").avatar
+        .container
+            .modalTitle
+                | Create Consumption
         .container
             #createConsumptionContainer
         .container

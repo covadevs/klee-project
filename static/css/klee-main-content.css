@@ -33,7 +33,7 @@
     width: 100%;
     padding: 10px;
     text-decoration: none;
-    height: 400px;
+    height: 420px;
     overflow: auto;
 }
 
@@ -45,7 +45,7 @@ th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #212121;
+    background-color: #234853;
     color: white;
 }
 

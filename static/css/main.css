@@ -47,7 +47,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vw;
+    font-size: 30px;
+    background: black;
+    color: white;
     cursor: auto;
 }
 
@@ -177,7 +179,7 @@ body {
 .pic-options:hover {
     transition: 200ms;
     color: white;
-    background-color: black;
+    background-color: #234853;
 }
 
 #sidebar{
@@ -187,7 +189,8 @@ body {
     /* grid-template-rows: repeat(4, 50px); */
     grid-area: sidebar;
     color: white;
-    background-color: #234853;
+    /*background-color: #234853;*/
+    background-image: url(/static/images/sidebar.svg);
     justify-items: center;
     border-bottom-left-radius: 5px;
     /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8); */
@@ -198,38 +201,32 @@ body {
     -webkit-transform: translateY(0) scale(1, 1); */
     display: flex;
     align-items: center;
-    /* padding-left: 10px; */
+    justify-content: center;
     /* transition: 50ms; */
     /* background-color: #234853; */
     color: white;
     width: 100%;
-    border-block-start: 1px solid #484848;
-    width: 90%;
-    transition: width 100ms;
+    /* border-block-start: 1px solid #484848; */
+    transition: 100ms;
 }
 
-.content-sidebar:first-child {
-    border: none;
-}
-
-.content-sidebar:hover {
+.content-sidebar:hover{
     color: black;
     background-color: white;
-    width: 100%;
 }
 
 .logo-style{
     margin-top: auto;
     margin-bottom: auto;
-    width: 3vw;
-    height: 3vw;
+    width: 40px;
+    height: 40px;
 }
 
 .logo-name {
     display: flex;
     color: #ffffff;
-    font-size: 3vw;
-    margin-left: 1vw;
+    font-size: 40px;
+    margin-left: 10px;
     font-weight: 600;
 }
 
@@ -263,5 +260,9 @@ body {
 
     #content {
         margin-left: 0;
+    }
+
+    .logo-name {
+        display: none;
     }
 }
