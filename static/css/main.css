@@ -48,7 +48,7 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    background: black;
+    background:#234853;
     color: white;
     cursor: auto;
 }
@@ -194,6 +194,7 @@ body {
     justify-items: center;
     border-bottom-left-radius: 5px;
     /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8); */
+    margin-top: -5px;
 }
 
 .content-sidebar {
