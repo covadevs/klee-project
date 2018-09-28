@@ -82,15 +82,15 @@ input[type=submit]:hover {
 .editbtn {
     width: 100%;
     padding: 10px 18px;
-    border: 1px solid #FB005B;
-    color: #FB005B;
+    border: 1px solid #234853;
+    color: #234853;
     cursor: pointer;
     font-weight: 600;
     background-color: white;
 }
 
 .editbtn:hover {
-    background-color: #FB005B;
+    background-color: #234853;
     color: white;
 }
 
@@ -102,7 +102,7 @@ input[type=submit]:hover {
 }
 
 img.avatar {
-    padding: 1vw;
+    padding: 0;
     width: 20%;
     border-radius: 50%;
     border: 1px solid black;
@@ -138,7 +138,13 @@ span.psw {
     background-color: white;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.modalTitle {
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
 }
 
 /* The Close Button (x) */
