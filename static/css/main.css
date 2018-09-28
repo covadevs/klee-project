@@ -177,7 +177,7 @@ body {
 .pic-options:hover {
     transition: 200ms;
     color: white;
-    background-color: black;
+    background-color: #234853;
 }
 
 #sidebar{
