@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW 2018 (64 Bit Versão de avaliação) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="24.1298mm" height="281.347mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 2412.98 28134.72"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="52.834mm" height="241.629mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 5283.4 24162.9"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
   <style type="text/css">
    <![CDATA[
-    .fil0 {fill:#207A96}
-    .fil1 {fill:#234853}
+    .fil1 {fill:#122B33}
+    .fil0 {fill:#189DC9}
    ]]>
   </style>
-    <mask id="id0">
-  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="1206.5" y1="-0.19" x2="1209.35" y2="8277.32">
+   <mask id="id0">
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="2641.7" y1="-0.02" x2="2817.81" y2="22260.89">
    <stop offset="0" style="stop-opacity:1; stop-color:white"/>
    <stop offset="1" style="stop-opacity:0; stop-color:white"/>
   </linearGradient>
-     <rect style="fill:url(#id1)" x="-11.17" y="-10.19" width="2435.32" height="28155.1"/>
-    </mask>
+    <rect style="fill:url(#id1)" x="-10.02" y="-10.02" width="5303.44" height="24182.95"/>
+   </mask>
  </defs>
  <g id="Camada_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_2322267518832">
-   <rect class="fil0" x="-1.18" y="-0.22" width="2415.32" height="28135.1"/>
-   <polygon class="fil1" style="mask:url(#id0)" points="-1.17,-0.19 2414.15,-0.19 2414.15,28134.91 -1.17,28134.91 "/>
-  </g>
+  <rect class="fil0" x="-0.02" y="-0.02" width="5283.44" height="24162.95"/>
+  <polygon class="fil1" style="mask:url(#id0)" points="-0.02,-0.02 5283.42,-0.02 5283.42,24162.93 -0.02,24162.93 "/>
  </g>
 </svg>

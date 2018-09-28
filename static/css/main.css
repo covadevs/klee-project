@@ -87,7 +87,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-area: topbar;
-    background-color: #234853;
+    background-color: #122b33;
     color: white;
     grid-template-areas: 
     "appname pic-profile";
@@ -249,7 +249,7 @@ body {
     display: grid;
     position: relative;
     grid-area: logo;
-    background: #234853;
+    background: #122b33;
     border-top-left-radius: 5px;
 }
 
