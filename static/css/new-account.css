@@ -6,7 +6,7 @@ a {
     transition: 200ms;
     text-decoration: none;
     font-weight: 600;
-    color: Red;
+    color: #203a42;
     text-align: center;
     margin-top: 14px;
 
@@ -14,7 +14,7 @@ a {
 
 a:hover {
     transition: 200ms;
-    color: #105669;
+    color: Gray;
 }
 
 .container {
