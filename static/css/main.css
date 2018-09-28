@@ -201,24 +201,18 @@ body {
     -webkit-transform: translateY(0) scale(1, 1); */
     display: flex;
     align-items: center;
-    /* padding-left: 10px; */
+    justify-content: center;
     /* transition: 50ms; */
     /* background-color: #234853; */
     color: white;
     width: 100%;
     /* border-block-start: 1px solid #484848; */
-    width: 90%;
-    transition: width 100ms;
+    transition: 100ms;
 }
 
-.content-sidebar:first-child {
-    border: none;
-}
-
-.content-sidebar:hover {
+.content-sidebar:hover{
     color: black;
     background-color: white;
-    width: 100%;
 }
 
 .logo-style{
