@@ -15,7 +15,8 @@ class AccountForm(forms.Form):
         max_length=50, 
         label='',
         widget=forms.TextInput(attrs={
-            'placeholder': 'Username'
+            'placeholder': 'Username',
+            'autofocus': 'true'
         }))
     
     email = forms.EmailField(

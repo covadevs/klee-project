@@ -26,7 +26,7 @@ def login(request):
             if user is not None:
                 auth_login(request, user)
                 messages.success(request, 'Logged succefully!')
-                return HttpResponseRedirect('/')
+                return HttpResponseRedirect('/consumptions')
             else:
                 messages.error(request, 'Invalid user or password!')
     else:
