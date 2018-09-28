@@ -47,7 +47,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vw;
+    font-size: 30px;
+    background: black;
+    color: white;
     cursor: auto;
 }
 
@@ -204,7 +206,7 @@ body {
     /* background-color: #234853; */
     color: white;
     width: 100%;
-    border-block-start: 1px solid #484848;
+    /* border-block-start: 1px solid #484848; */
     width: 90%;
     transition: width 100ms;
 }
@@ -222,15 +224,15 @@ body {
 .logo-style{
     margin-top: auto;
     margin-bottom: auto;
-    width: 3vw;
-    height: 3vw;
+    width: 40px;
+    height: 40px;
 }
 
 .logo-name {
     display: flex;
     color: #ffffff;
-    font-size: 3vw;
-    margin-left: 1vw;
+    font-size: 40px;
+    margin-left: 10px;
     font-weight: 600;
 }
 
@@ -264,5 +266,9 @@ body {
 
     #content {
         margin-left: 0;
+    }
+
+    .logo-name {
+        display: none;
     }
 }

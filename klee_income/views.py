@@ -7,8 +7,8 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 # Create your views here.
 
-def createIncome(request, id):
-    user = User.objects.get(pk=id)
+def createIncome(request):
+    user = User.objects.get(pk=request.user.id)
 
     if request.method == 'POST':
         form = CreateIncomeForm(request.POST)
