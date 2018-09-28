@@ -1,5 +1,5 @@
 #modalCreateIncome.modal
-    form(action="{% url 'create-income' user.pk %}", method="POST").modal-content.animate
+    form(action="{% url 'create-income'%}", method="POST").modal-content.animate
         span(onclick="document.getElementById('modalCreateIncome').style.display = 'none'", title="Close").close &times;
         .container
             .modalTitle
