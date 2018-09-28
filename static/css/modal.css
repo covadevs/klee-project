@@ -60,7 +60,7 @@ input[type=submit]:hover {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     /* background-color: black;
     color: white; */
-    /* color: #FB005B; */
+    color: #FB005B;
     text-shadow: 0 0 3px white;
 }
 
@@ -102,7 +102,7 @@ input[type=submit]:hover {
 }
 
 img.avatar {
-    padding: 1vw;
+    padding: 0;
     width: 20%;
     border-radius: 50%;
     border: 1px solid black;
@@ -138,7 +138,13 @@ span.psw {
     background-color: white;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 30%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.modalTitle {
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
 }
 
 /* The Close Button (x) */

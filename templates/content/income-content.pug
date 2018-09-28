@@ -3,7 +3,7 @@ extends main/index
 block content
     #content-container
         .content-style#content-manager-bar
-            a(onclick="loadIncomeForm('{% url 'create-income' user.pk %}')")
+            a(onclick="loadIncomeForm('{% url 'create-income'%}')")
                 img(src="/static/images/plus.svg").content-manager-item
         .content-style#content-table
             - render_table table
