@@ -1,9 +1,29 @@
 extends main/index
 - load render_table from django_tables2
+- load djmoney
+- money_localize money
 block content
-    #content-container
+
+    //- TODO criar css para incomes. problema no grid do user-infos devido ao content-container
+    #content-container-income
         .content-style#content-manager-bar
             a(onclick="loadIncomeForm('{% url 'create-income'%}')")
                 img(src="/static/images/plus.svg").content-manager-item
-        .content-style#content-table
-            - render_table table
+        .user-infos
+            .spent-warn 
+                .value-type.value-type-income
+                    .value-formatted.value-warn=message
+            .income
+                .value-type.value-type-income Income
+                    .value-formatted.value-income=value
+            .consumption
+                .value-type.value-type-consumption Expense
+                    .value-formatted.value-consumption=spent
+            .reduction 
+                .value-type.value-type-consumption Reduction recommended
+                    .value-formatted.value-consumption=reduction_value
+            .sugest 
+                .value-type.value-type-consumption Expense suggestion
+                    .value-formatted.value-consumption=sugested_value
+                | 95% of monthly income
+            

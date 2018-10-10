@@ -71,11 +71,12 @@ body {
 #content {
     display: grid;
     grid-area: content;
-    background-color: white;
+    background: transparent;
+    border-right: 1px solid #234853;
+    border-bottom: 1px solid #234853;
     /*background-image: url(/static/images/login/fundo3.jpg);*/
     /* margin-top: 10px;
     margin-left: 10px; */
-    border-bottom-right-radius: 5px;
     /* box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.9); */
 }
 
@@ -92,7 +93,6 @@ body {
     color: white;
     grid-template-areas: 
     "appname pic-profile";
-    border-top-right-radius: 5px;
     /* box-shadow: 1px 1px 1px 1px #000000; */
 }
 
@@ -192,7 +192,6 @@ body {
     /*background-color: #234853;*/
     background-image: url(/static/images/sidebar.svg);
     justify-items: center;
-    border-bottom-left-radius: 5px;
     /* box-shadow: 2px 2px 8px 1px rgba(0, 0, 0, 0.8); */
     margin-top: -5px;
 }
@@ -244,7 +243,6 @@ body {
     position: relative;
     grid-area: logo;
     background: #234853;
-    border-top-left-radius: 5px;
 }
 
 @media(max-width: 310px) {

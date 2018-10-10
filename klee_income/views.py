@@ -22,7 +22,7 @@ def createIncome(request):
             return HttpResponseRedirect('/incomes')
     else:
         form = CreateIncomeForm()
-
+        
     response = HttpResponse(form)
 
     return response

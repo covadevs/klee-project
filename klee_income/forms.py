@@ -12,12 +12,6 @@ class CreateIncomeForm(ModelForm):
                 'placeholder': 'Income value',
                 'min': '0.1',
                 'step': '0.01',
-                'type': 'number' 
-            }),
+                'type': 'number',
+            })
         }
-        
-    # value = forms.DecimalField(max_digits=19, decimal_places=2, label='',
-    # widget=forms.TextInput(attrs={
-    #     'placeholder': 'Income value',
-    #     'autofocus': 'true'
-    #     }))

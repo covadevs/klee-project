@@ -1,9 +1,19 @@
 extends main/index
 - load render_table from django_tables2
+- load bootstrap3
+block head
+    link(href='/static/css/klee-consumption-content.css', rel='stylesheet')
 block content
     #content-container
         .content-style#content-manager-bar
-            a(onclick="loadConsumptionForm('{% url 'create-consumption' %}')")
-                img(src="/static/images/plus.svg").content-manager-item
+            a(onclick="loadConsumptionForm('{% url 'create-consumption' %}')").content-manager-item
+                img(src="/static/images/plus.svg")
+            a(id="da").content-manager-item
+                img(src="/static/images/export.svg")
         .content-style#content-table
+            if filter
+                form(id="form-filter", action="", method="GET").scroll
+                    {{ filter.form }}
+                    button.btn-filter Filter
+                    button(onclick="cleanFilter('form-filter')" ).btn-filter Clean filter
             - render_table table

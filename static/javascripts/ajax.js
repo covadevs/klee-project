@@ -46,7 +46,7 @@ function loadIncomeForm(url) {
         success: function(data) {
             cleanElement('createIncomeContainer');
             $('#createIncomeContainer').append(data);
-            document.getElementById('id_value').focus();
+            document.getElementById('id_value_0').focus();
         }
     })
 }
@@ -64,15 +64,32 @@ function loadConsumptionForm(url) {
         success: function(data) {
             cleanElement('createConsumptionContainer');
             $('#createConsumptionContainer').append(data);
-            document.getElementById('id_value').focus();
-        },
-        async: false
+            document.getElementById('id_value_0').focus();
+            $(function() {
+                $("#id_date").datepicker();
+            })
+        }
     })
 }
+
+$(function() {
+    $("#id_date").datepicker();
+})
 
 function cleanElement(id) {
     let id_element = document.getElementById(id);
     while(id_element.firstChild) {
         id_element.removeChild(id_element.firstChild);
     }
+}
+
+function cleanFilter(id) {
+    let form = document.forms[id];
+    form['id_value'].value = "";
+    form['id_consumption_opts'].value = "";
+    form['id_paid'].value = 1;
+    form['id_date_0'].value = "";
+    form['id_date_1'].value = "";
+    form['id_category_opts'].value = "";
+    form.submit();
 }

@@ -7,7 +7,7 @@ from djmoney.forms.widgets import MoneyWidget
 class CreateConsumptionForm(ModelForm):
     class Meta:
         model=Consumption
-        fields = ['value', 'consumption_opts']
+        fields = ['value', 'consumption_opts', 'paid', 'category_opts', 'date']
         widgets = {
             'value': MoneyWidget(attrs={
                 'placeholder': 'Consumption value',

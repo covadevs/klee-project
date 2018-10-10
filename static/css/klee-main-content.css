@@ -7,11 +7,82 @@
     "content-table";
 }
 
+#content-container-income {
+    display: grid;
+    grid-template-rows: 80px 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "content-manager-bar"
+    "user-infos";
+}
+
 .content-style {
     display: flex;
     background-color: whitesmoke;
     margin: 10px;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,1);
+}
+
+.user-infos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "spent-warn spent-warn"
+    "income consumption"
+    "reduction sugest";
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    grid-area: user-infos;
+    border: 1px solid black;
+}
+
+.spent-warn {
+    grid-area: spent-warn;
+}
+
+.sugest {
+    grid-area: sugest;
+}
+
+.income {
+    grid-area: income;
+}
+
+.consumption {
+    grid-area: consumption;
+}
+
+.reduction {
+    grid-area: reduction;
+}
+
+.value-formatted {
+    font-size: 3vw;
+    font-weight: 900;
+}
+
+.value-income {
+    color: #234853;
+}
+
+.value-warn {
+    font-size: 3vw;
+}
+
+.value-consumption {
+    color: #f44336;
+}
+
+.value-type {
+    font-size: 2vw;
+    /* font-weight: 900; */
+}
+
+.value-type-income {
+
 }
 
 .content-manager-item {
@@ -27,6 +98,10 @@
 #content-table {
     display: flex;
     grid-area: content-table;
+}
+
+.content-manager-bar-item {
+    margin-right: 10px;
 }
 
 .table-container {

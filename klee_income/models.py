@@ -10,7 +10,7 @@ class Income(models.Model):
         primary_key=True,
     )
 
-    value = MoneyField(max_digits=14, decimal_places=4, default_currency='EUR')
+    value = MoneyField(max_digits=14, decimal_places=4, default_currency='R$')
 
     def __repr__(self):
         return str(self.value)
