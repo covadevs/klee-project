@@ -1,0 +1,10 @@
+- load djmoney
+#modalDetailConsumption.modal
+        .container
+            .modalTitle
+                | Create Consumption
+        //- .container
+        //-     #createConsumptionContainer
+        .container
+            {% csrf_token %}
+            {{ descricao }}

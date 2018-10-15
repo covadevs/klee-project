@@ -5,14 +5,20 @@ from djmoney.models.fields import MoneyField
 from djmoney.forms.widgets import MoneyWidget
 
 class CreateConsumptionForm(ModelForm):
+    description = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Description'
+    }))
+    date = forms.CharField(widget=forms.TextInput(attrs={
+        'placeholder': 'Date'
+    }))
     class Meta:
         model=Consumption
-        fields = ['value', 'consumption_opts', 'paid', 'category_opts', 'date']
+        fields = ['value', 'description', 'consumption_opts', 'paid', 'category_opts', 'date']
         widgets = {
             'value': MoneyWidget(attrs={
                 'placeholder': 'Consumption value',
                 'min': '0.1',
                 'step': '0.01',
-                'type': 'number' 
+                'type': 'number'
             }),
         }

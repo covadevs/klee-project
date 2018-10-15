@@ -5,10 +5,12 @@ from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-
-import io
-from django.http import FileResponse
-from reportlab.pdfgen import canvas
+from djmoney.money import Money
+from klee_consumption.models import Consumption
+from klee_income.models import Income
+from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ObjectDoesNotExist
+import random
 
 # Create your views here.
 
@@ -25,8 +27,9 @@ def createConsumption(request):
             category_opts = form.cleaned_data['category_opts']
             date = form.cleaned_data['date']
             paid = form.cleaned_data['paid']
+            description = form.cleaned_data['description']
 
-            consumption = Consumption(user=user, value=value, consumption_opts=consumption_opts, date=date, paid=paid, category_opts=category_opts)
+            consumption = Consumption(user=user, value=value, description=description, consumption_opts=consumption_opts, date=date, paid=paid, category_opts=category_opts)
             consumption.save()
             messages.success(request, 'Consumption created!')
             return HttpResponseRedirect('/consumptions')
@@ -37,16 +40,47 @@ def createConsumption(request):
 
     return response
 
-def generateConsumptionsPDF(request):
-    userId = request.user.id
+@login_required
+def generateExpenseReport(request):
+    try:
+        userId = request.user.id
 
-    buffer = io.BytesIO()
+        income = Income.objects.get(user=userId)
+        expenses = Consumption.objects.filter(user=userId)
+        balances = []
 
-    p = canvas.Canvas(buffer)
+        totalExpenseAmount = Money(0, 'R$')
+        balance = income.value
+        for expense in expenses:
+            if(expense.paid == False):
+                balance = balance - expense.value
+            balances.append(balance)
+            totalExpenseAmount += expense.value
 
-    p.drawString(100, 100, "Hello world.")
+        finalBalance = Money(0, 'R$')
+        for balance in balances:
+            finalBalance += balance
 
-    p.showPage()
-    p.save()
+        rpRandomNumber = random.randint(1000, 2000)
 
-    return FileResponse(buffer, as_attachment=True, filename='hello.pdf')
+            
+
+        context_dict = {
+            'title': 'Klee - Expense Report',
+            'income': income,
+            'expenses': expenses,
+            'balances': balances,
+            'finalBalance': finalBalance,
+            'totalExpenseAmount': totalExpenseAmount,
+            'rpRandomNumber': rpRandomNumber,
+            'exists': True
+        }
+    except ObjectDoesNotExist:
+        context_dict = {
+            'exists': False
+        }
+
+    return render(request, 'klee-consumption/expense-report.pug', context=context_dict)
+
+
+    

@@ -35,23 +35,27 @@ def incomes(request):
     
     if(Consumption.objects.filter(pk=request.user.id).exists()):
         consumptions = Consumption.objects.filter(paid=False)
-        if consumptions is not None:
+        if len(consumptions) > 0:
             spent = Money(consumptions.aggregate(Sum('value'))['value__sum'], 'R$')
             reduction_value = spent-((95/100)*value)
 
             if reduction_value.amount < 0:
                 reduction_value = Money(0, 'R$')
+        else:
+            spent = Money(0, 'R$')
+            reduction_value = Money(0, 'R$')
     else:
-        spent = Money(0, 'R$')    
+        spent = Money(0, 'R$')
         reduction_value = Money(0, 'R$')
-    
-
+        
     if spent > value:
         message = "You spend more than you earn."
     elif value > spent and value.amount > 0:
         message = "You save money"
     elif value.amount == 0 and spent.amount == 0:
         message = "Você não possui gastos e receita"
+    elif value == spent:
+        message = "Limit reached"
 
     context_dict = {
         'title': 'Klee',

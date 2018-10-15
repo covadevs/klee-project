@@ -52,7 +52,6 @@ function loadIncomeForm(url) {
 }
 
 function loadConsumptionForm(url) {
-    console.log('entrou')
     document.getElementById('modalCreateConsumption').style.display = 'block';
     $.ajax({
         url: url,
@@ -66,7 +65,11 @@ function loadConsumptionForm(url) {
             $('#createConsumptionContainer').append(data);
             document.getElementById('id_value_0').focus();
             $(function() {
-                $("#id_date").datepicker();
+                $("#id_date").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'yy-mm-dd'
+                });
             })
         }
     })
@@ -91,5 +94,26 @@ function cleanFilter(id) {
     form['id_date_0'].value = "";
     form['id_date_1'].value = "";
     form['id_category_opts'].value = "";
+    form['id_description'].value = "";
     form.submit();
 }
+
+function tableRowClick(rowId) {
+    console.log(rowId)
+    // $.ajax({
+    //     url: url,
+    //     type: 'GET',
+    //     data: {
+    //         csrfmiddlewaretoken: csrftoken,
+    //     },
+    //     timeout: 0,
+    //     success: function(data) {
+    //         cleanElement('createConsumptionContainer');
+    //         $('#createConsumptionContainer').append(data);
+    //         document.getElementById('id_value_0').focus();
+    //         $(function() {
+    //             $("#id_date").datepicker();
+    //         })
+    //     }
+    // })
+} 

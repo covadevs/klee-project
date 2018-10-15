@@ -7,6 +7,19 @@ block head-layout
     script(src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js")
     script(src='/static/javascripts/main-functions.js')
     script(src='/static/javascripts/ajax.js')
+    script
+        | $( function() {
+        |     $( "#id_date_0" ).datepicker({
+        |            changeMonth: true,
+        |            changeYear: true,
+        |            dateFormat: 'yy-mm-dd'
+        |        });
+        |     $( "#id_date_1" ).datepicker({
+        |            changeMonth: true,
+        |            changeYear: true,
+        |            dateFormat: 'yy-mm-dd'
+        |        });
+        | });
     block head
 
 block body-layout

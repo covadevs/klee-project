@@ -6,7 +6,7 @@ from datetime import datetime
 
 class Consumption(models.Model):
 
-    WEEKLY  = 'S'
+    WEEKLY  = 'W'
     MONTHLY = 'M'
     CONSUMPTION_CHOICES = (
         (WEEKLY, 'SEMANAL'),
@@ -16,7 +16,7 @@ class Consumption(models.Model):
     OTHERS              = 'OT'
     NOCATEGORY          = 'NC'
     HOME                = 'HM'
-    EDUCATION           = 'ET'
+    EDUCATION           = 'ED'
     RECREATION          = 'RT'
     FOOD                = 'FD'
     TRANSPORT           = 'TP'
@@ -36,12 +36,13 @@ class Consumption(models.Model):
         (COMMUNICATION, 'COMMUNICATION'),
         (RATESANDTAXES, 'RATES AND TAXES'),
         (HEALTH, 'HEALTH'),
-
     )
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     value = MoneyField(max_digits=14, decimal_places=4, default_currency='BRL')
+
+    description = models.CharField('Description', max_length=30)
 
     date = models.DateField(null=False)
 
@@ -62,4 +63,4 @@ class Consumption(models.Model):
     )
 
     def __repr__(self):
-        return value
+        return str(self.value)

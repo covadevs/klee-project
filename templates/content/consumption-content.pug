@@ -8,7 +8,7 @@ block content
         .content-style#content-manager-bar
             a(onclick="loadConsumptionForm('{% url 'create-consumption' %}')").content-manager-item
                 img(src="/static/images/plus.svg")
-            a(id="da").content-manager-item
+            a(href="{% url 'expense-report' %}",target="_blank").content-manager-item
                 img(src="/static/images/export.svg")
         .content-style#content-table
             if filter
