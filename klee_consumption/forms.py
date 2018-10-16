@@ -6,7 +6,8 @@ from djmoney.forms.widgets import MoneyWidget
 
 class CreateConsumptionForm(ModelForm):
     description = forms.CharField(widget=forms.TextInput(attrs={
-        'placeholder': 'Description'
+        'placeholder': 'Description',
+        'maxlength': '30'
     }))
     date = forms.CharField(widget=forms.TextInput(attrs={
         'placeholder': 'Date'

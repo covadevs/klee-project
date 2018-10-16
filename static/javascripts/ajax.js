@@ -98,22 +98,26 @@ function cleanFilter(id) {
     form.submit();
 }
 
-function tableRowClick(rowId) {
-    console.log(rowId)
-    // $.ajax({
-    //     url: url,
-    //     type: 'GET',
-    //     data: {
-    //         csrfmiddlewaretoken: csrftoken,
-    //     },
-    //     timeout: 0,
-    //     success: function(data) {
-    //         cleanElement('createConsumptionContainer');
-    //         $('#createConsumptionContainer').append(data);
-    //         document.getElementById('id_value_0').focus();
-    //         $(function() {
-    //             $("#id_date").datepicker();
-    //         })
-    //     }
-    // })
+function tableRowClick(url) {
+    document.getElementById('modalDetailConsumption').style.display = 'block';
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: {
+            csrfmiddlewaretoken: csrftoken,
+        },
+        success: function(data) {
+            fields = data[0].fields
+            $("#value_detail").empty().append(fields.value + " "+ fields.value_currency);
+            $("#desc_detail").empty().append(fields.description);
+            $("#type_detail").empty().append(fields.consumption_opts);
+            $("#paid_detail").empty().append(fields.paid ? 'Yes':'No');
+            $("#cat_detail").empty().append(fields.category_opts);
+            $("#date_detail").empty().append(fields.date);
+            console.log(data[0].fields);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
 } 

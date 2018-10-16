@@ -1,0 +1,22 @@
+#modalCatListConsumption.modal
+    .modal-content.animate
+        span(onclick="document.getElementById('modalCatListConsumption').style.display = 'none'", title="Close").close &times;
+        .container
+            .modalTitle
+                | Category list
+        .container
+            #catListConsumptionContainer
+                div.lists
+                    //- .list-header Category list
+                    ul 
+                        li OT - OTHERS
+                        li NC - NO CATEGORY
+                        li HM - HOME
+                        li ED - EDUCATION
+                        li RT - RECREATION
+                        li FD - FOOD
+                        li TP - TRANSPORT
+                        li PE - PERSONAL EXPENSES
+                        li CM - COMMUNICATION
+                        li RT - RATES AND TAXES
+                        li HT - HEALTH

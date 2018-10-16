@@ -1,10 +1,37 @@
-- load djmoney
 #modalDetailConsumption.modal
+    .modal-content.animate
+        span(onclick="document.getElementById('modalDetailConsumption').style.display = 'none'", title="Close").close &times;
         .container
             .modalTitle
-                | Create Consumption
-        //- .container
-        //-     #createConsumptionContainer
+                | Detail Expense
         .container
-            {% csrf_token %}
-            {{ descricao }}
+            #detailConsumptionContainer
+                table
+                    tr
+                        th
+                            | Value
+                        th
+                            | Desc.
+                        th
+                            | Type
+                        th
+                            | Paid
+                        th
+                            | Cat.
+                        th
+                            | Date
+                    tr
+                        td(id="value_detail")
+                        td(id="desc_detail")
+                        td(id="type_detail")
+                        td(id="paid_detail")
+                        td(id="cat_detail")
+                        td(id="date_detail")
+                button(onclick="document.getElementById('modalTypeListConsumption').style.display = 'block';") Type List
+                button(onclick="document.getElementById('modalCatListConsumption').style.display = 'block';") Category List
+                button() Edit
+                button() Delete
+                        
+                            
+                            
+

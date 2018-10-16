@@ -10,9 +10,18 @@ from klee_consumption.models import Consumption
 from klee_income.models import Income
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
+from django.http import JsonResponse
+from django.core.serializers import serialize
 import random
+from django.core.serializers.json import DjangoJSONEncoder
 
 # Create your views here.
+class LazyEncoder(DjangoJSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Consumption):
+            return str(obj)
+        return super().default(obj)
+
 
 def createConsumption(request):
     userId = request.user.id
@@ -82,5 +91,10 @@ def generateExpenseReport(request):
 
     return render(request, 'klee-consumption/expense-report.pug', context=context_dict)
 
+
+def getExpenseDetails(request, expenseId):
+    expense = serialize('json', Consumption.objects.filter(pk=expenseId), cls=LazyEncoder)
+
+    return HttpResponse(expense, content_type='application/json')
 
     

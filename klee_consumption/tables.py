@@ -26,10 +26,10 @@ class ConsumptionTable(tables.Table):
         
         row_attrs = {
             'data-id': lambda record: record.pk,
-            'onclick': lambda record: 'tableRowClick("'+reverse(views.createConsumption)+'")'
+            'onclick': lambda record: 'tableRowClick("'+reverse(views.getExpenseDetails,  kwargs={'expenseId':record.pk})+'")'
         }
 
-        fields = ['value', 'description', 'consumption_opts', 'paid', 'category_opts', 'date']
+        fields = ['value', 'description', 'consumption_opts', 'category_opts', 'date']
         empty_text = 'No data'
 
 class ConsumptionFilter(django_filters.FilterSet):
