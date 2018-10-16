@@ -61,6 +61,7 @@ function loadConsumptionForm(url) {
         },
         timeout: 0,
         success: function(data) {
+            console.log(data)
             cleanElement('createConsumptionContainer');
             $('#createConsumptionContainer').append(data);
             document.getElementById('id_value_0').focus();
@@ -68,9 +69,9 @@ function loadConsumptionForm(url) {
                 $("#id_date").datepicker({
                     changeMonth: true,
                     changeYear: true,
-                    dateFormat: 'yy-mm-dd'
+                    dateFormat: 'yy-mm-dd',
                 });
-            })
+            });
         }
     })
 }
@@ -112,12 +113,31 @@ function tableRowClick(url) {
             $("#desc_detail").empty().append(fields.description);
             $("#type_detail").empty().append(fields.consumption_opts);
             $("#paid_detail").empty().append(fields.paid ? 'Yes':'No');
-            $("#cat_detail").empty().append(fields.category_opts);
+            $("#cat_detail").empty().append(fields.category);
             $("#date_detail").empty().append(fields.date);
-            console.log(data[0].fields);
         },
         error: function(error) {
             console.log(error);
         }
     });
 } 
+
+function loadCategoryForm(url) {
+    document.getElementById('modalCreateCategory').style.display = 'block';
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: {
+            csrfmiddlewaretoken: csrftoken,
+        },
+        success: function(data) {
+            cleanElement('createCategoryContainer');
+            $('#createCategoryContainer').append(data);
+            document.getElementById('id_category_name').focus();
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+}
+    

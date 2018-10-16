@@ -38,7 +38,7 @@ block body-layout
                     td=expense.date
                     td=expense.description
                     td=expense.consumption_opts
-                    td=expense.category_opts
+                    td=expense.category.category_name
                     if expense.paid
                         td 
                             | Yes

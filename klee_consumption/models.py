@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from djmoney.models.fields import MoneyField
 from datetime import datetime
+from klee_category.models import Category
 # Create your models here.
 
 class Consumption(models.Model):
@@ -13,30 +14,7 @@ class Consumption(models.Model):
         (MONTHLY, 'MENSAL')
     )
 
-    OTHERS              = 'OT'
-    NOCATEGORY          = 'NC'
-    HOME                = 'HM'
-    EDUCATION           = 'ED'
-    RECREATION          = 'RT'
-    FOOD                = 'FD'
-    TRANSPORT           = 'TP'
-    PERSONALEXPENSES    = 'PE'
-    COMMUNICATION       = 'CM'
-    RATESANDTAXES       = 'RT'
-    HEALTH              = 'HT'
-    CONSUMPTION_CATEGORY = (
-        (OTHERS, 'OTHERS'),
-        (NOCATEGORY, 'NO CATEGORY'),
-        (HOME, 'HOME'),
-        (EDUCATION, 'EDUCATION'),
-        (RECREATION, 'RECREATION'),
-        (FOOD, 'FOOD'),
-        (TRANSPORT, 'TRANSPORT'),
-        (PERSONALEXPENSES, 'PERSONAL EXPENSES'),
-        (COMMUNICATION, 'COMMUNICATION'),
-        (RATESANDTAXES, 'RATES AND TAXES'),
-        (HEALTH, 'HEALTH'),
-    )
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -53,13 +31,6 @@ class Consumption(models.Model):
         max_length = 1,
         choices = CONSUMPTION_CHOICES,
         default = WEEKLY
-    )
-
-    category_opts = models.CharField(
-        'Category',
-        max_length = 2,
-        choices = CONSUMPTION_CATEGORY,
-        default = NOCATEGORY
     )
 
     def __repr__(self):

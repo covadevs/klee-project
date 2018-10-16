@@ -25,5 +25,6 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('income/', include('klee_income.urls')),
     path('consumption/', include('klee_consumption.urls')),
+    path('category/', include('klee_category.urls')),
     path('admin/', admin.site.urls),
 ]

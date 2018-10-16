@@ -14,6 +14,7 @@ from django.http import JsonResponse
 from django.core.serializers import serialize
 import random
 from django.core.serializers.json import DjangoJSONEncoder
+from klee_category.models import Category
 
 # Create your views here.
 class LazyEncoder(DjangoJSONEncoder):
@@ -33,17 +34,18 @@ def createConsumption(request):
         if form.is_valid():
             value = form.cleaned_data['value']
             consumption_opts = form.cleaned_data['consumption_opts']
-            category_opts = form.cleaned_data['category_opts']
+            category = form.cleaned_data['category']
             date = form.cleaned_data['date']
             paid = form.cleaned_data['paid']
             description = form.cleaned_data['description']
 
-            consumption = Consumption(user=user, value=value, description=description, consumption_opts=consumption_opts, date=date, paid=paid, category_opts=category_opts)
+            consumption = Consumption(user=user, value=value, description=description, category=category, date=date, paid=paid, consumption_opts=consumption_opts)
             consumption.save()
             messages.success(request, 'Consumption created!')
             return HttpResponseRedirect('/consumptions')
     else:
         form = CreateConsumptionForm()
+        form.fields['category'].queryset = Category.objects.all()
 
     response = HttpResponse(form)
 
@@ -96,5 +98,6 @@ def getExpenseDetails(request, expenseId):
     expense = serialize('json', Consumption.objects.filter(pk=expenseId), cls=LazyEncoder)
 
     return HttpResponse(expense, content_type='application/json')
+
 
     

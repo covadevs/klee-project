@@ -7,6 +7,7 @@ if(document.readyState === 'loading') {
 function afterLoaded() {
     addItem('button_one', 'Income', null, 'incomes');
     addItem('button_two', 'Expense', null, 'consumptions');
+    addItem('button_three', 'Category', null, 'categories');
 }
 
 function addItem(idItem, text, icon_path, href){

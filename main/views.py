@@ -82,3 +82,11 @@ def consumptions(request):
     }
 
     return render(request, 'content/consumption-content.pug', context=context_dict)
+
+@login_required
+def categories(request):
+    context_dict = {
+        'title': 'Klee'
+    }
+
+    return render(request, 'content/category-content.pug', context=context_dict)

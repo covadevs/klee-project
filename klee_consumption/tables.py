@@ -21,15 +21,16 @@ class MyRangeWidget(RangeWidget):
 
 class ConsumptionTable(tables.Table):
     date = django_tables2.columns.DateTimeColumn(format='Y-m-d')
+    
     class Meta:
         model = Consumption
         
         row_attrs = {
             'data-id': lambda record: record.pk,
-            'onclick': lambda record: 'tableRowClick("'+reverse(views.getExpenseDetails,  kwargs={'expenseId':record.pk})+'")'
+            'onclick': lambda record: 'tableRowClick("'+reverse(views.getExpenseDetails,  kwargs={'expenseId':record.pk})+'")',
         }
 
-        fields = ['value', 'description', 'consumption_opts', 'category_opts', 'date']
+        fields = ['value', 'description', 'consumption_opts', 'category', 'date']
         empty_text = 'No data'
 
 class ConsumptionFilter(django_filters.FilterSet):
@@ -46,7 +47,7 @@ class ConsumptionFilter(django_filters.FilterSet):
     description = django_filters.CharFilter(lookup_expr='icontains')
     class Meta:
         model = Consumption
-        fields = ['value', 'description', 'consumption_opts', 'paid', 'category_opts', 'date']
+        fields = ['value', 'description', 'consumption_opts', 'paid', 'category', 'date']
 
 class FilteredConsumptionListView(SingleTableMixin, FilterView):
     table_class = ConsumptionTable

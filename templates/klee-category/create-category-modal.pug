@@ -1,0 +1,11 @@
+#modalCreateCategory.modal
+    form(action="{% url 'create-category' %}", method="POST").modal-content.animate
+        span(onclick="document.getElementById('modalCreateCategory').style.display = 'none'", title="Close").close &times;
+        .container
+            .modalTitle
+                | Create category
+        .container
+            #createCategoryContainer
+        .container
+            {% csrf_token %}
+            button(type="submit").editbtn Create

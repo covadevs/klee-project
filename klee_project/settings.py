@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     'logout',
     'klee_income',
     'klee_consumption',
+    'klee_category',
     'djmoney',
     'django_filters',
     'bootstrap3',
