@@ -53,6 +53,10 @@ block body-layout
                 td(colspan="5", align="right")
                     | Total expense amount
                 td(align="right")=totalExpenseAmount
+            tr.table-final-info
+                td(colspan="5", align="right")
+                    | Startup expenses
+                td(align="right")=lancamentosFuturos
         button(onclick="window.print()").btn Print
         button(onclick="document.getElementById('modalTypeListConsumption').style.display = 'block';").btn Type list
         button(onclick="document.getElementById('modalCatListConsumption').style.display = 'block';").btn Category list

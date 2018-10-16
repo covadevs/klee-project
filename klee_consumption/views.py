@@ -63,14 +63,14 @@ def generateExpenseReport(request):
         totalExpenseAmount = Money(0, 'R$')
         balance = income.value
         for expense in expenses:
-            if(expense.paid == False):
-                balance = balance - expense.value
-            balances.append(balance)
-            totalExpenseAmount += expense.value
+            if(expense.paid == True):
+                totalExpenseAmount += expense.value
+            else:
+                balances.append(balance)
 
-        finalBalance = Money(0, 'R$')
+        lancamentosFuturos = Money(0, 'R$')
         for balance in balances:
-            finalBalance += balance
+            lancamentosFuturos += balance
 
         rpRandomNumber = random.randint(1000, 2000)
             
@@ -80,7 +80,7 @@ def generateExpenseReport(request):
             'income': income,
             'expenses': expenses,
             'balances': balances,
-            'finalBalance': finalBalance,
+            'lancamentosFuturos': lancamentosFuturos,
             'totalExpenseAmount': totalExpenseAmount,
             'rpRandomNumber': rpRandomNumber,
             'exists': True
