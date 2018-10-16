@@ -73,7 +73,6 @@ def generateExpenseReport(request):
             finalBalance += balance
 
         rpRandomNumber = random.randint(1000, 2000)
-
             
 
         context_dict = {
@@ -95,8 +94,8 @@ def generateExpenseReport(request):
 
 
 def getExpenseDetails(request, expenseId):
-    expense = serialize('json', Consumption.objects.filter(pk=expenseId), cls=LazyEncoder)
-
+    consumptions = Consumption.objects.filter(pk=expenseId)
+    expense = serialize('json', consumptions)
     return HttpResponse(expense, content_type='application/json')
 
 
