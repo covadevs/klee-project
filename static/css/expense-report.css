@@ -5,8 +5,7 @@
 }
 
 #expenseReport td, #expenseReport th {
-    /* border-left: 1px solid black;
-    border-right: 1px solid black; */
+    border: 1px solid black;
     padding: 8px;
 }
 
@@ -86,12 +85,13 @@ body {
 }
 
 .lists {
-    float: left;
+    /* float: left; */
     margin-top: 10px;
     margin-right: 10px;
     padding-right: 20px;
-    /* border: 1px solid black; */
-    
+    /* height: 150px;
+    overflow: auto; */
+    border: 1px solid black;  
 }
 
 .list-header {
@@ -107,4 +107,21 @@ body {
     text-align: center;
     padding: 10px;
     font-size: 50px;
+}
+
+.btn {
+    border: none;
+    padding: 10px;
+    width: 20%;
+    float: right;
+    color: black;
+    cursor: pointer;
+    border: 1px solid #234853;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    background: #234853;
+    color: white;
 }

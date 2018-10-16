@@ -1,9 +1,12 @@
 extends layout
 block head-layout
     link(rel="stylesheet", href="/static/css/expense-report.css")
+    link(rel="stylesheet", href="/static/css/modal.css")
     script(src="/static/javascripts/expense-report.js")
 block body-layout
     if exists
+        include ../klee-consumption/category-list-info-modal.pug
+        include ../klee-consumption/type-list-info-modal.pug
         #container-report
             #header
                 .header-class
@@ -15,7 +18,7 @@ block body-layout
                 .report-number-class
                     |Report Number
                     br
-                    |RP0{{ rpRandomNumber }}
+                    |RP0{{ rpRandomNumber }} 
         table(id="expenseReport")
             tr
                 th.left-th
@@ -50,26 +53,9 @@ block body-layout
                 td(colspan="5", align="right")
                     | Total expense amount
                 td(align="right")=totalExpenseAmount
-
-        div.lists
-            .list-header Type list
-            ul
-                li W - WEEKLY
-                li M - MONTHLY
-        div.lists
-            .list-header Category list
-            ul 
-                li OT - OTHERS
-                li NC - NO CATEGORY
-                li HM - HOME
-                li ED - EDUCATION
-                li RT - RECREATION
-                li FD - FOOD
-                li TP - TRANSPORT
-                li PE - PERSONAL EXPENSES
-                li CM - COMMUNICATION
-                li RT - RATES AND TAXES
-                li HT - HEALTH
+        button(onclick="window.print()").btn Print
+        button(onclick="document.getElementById('modalTypeListConsumption').style.display = 'block';").btn Type list
+        button(onclick="document.getElementById('modalCatListConsumption').style.display = 'block';").btn Category list
     else
         div.no-data
             | There is not enough data to supply an expense report
