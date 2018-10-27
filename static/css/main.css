@@ -103,6 +103,10 @@ body {
     margin-bottom: auto;
     margin-left: 10px;
     color: white;
+    font-weight: 600;
+}
+appname:hover{
+    background-color: #234853
 }
 
 #pic-profile {
@@ -208,11 +212,13 @@ body {
     width: 100%;
     /* border-block-start: 1px solid #484848; */
     transition: 100ms;
+    font-weight: 598.5;
 }
 
 .content-sidebar:hover{
     color: black;
     background-color: white;
+    font-weight: bold;
 }
 
 .logo-style{
