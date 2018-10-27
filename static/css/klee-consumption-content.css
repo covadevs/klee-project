@@ -9,6 +9,8 @@ form {
 
 form > label {
     text-align: left;
+    color: #203a42;
+    font-weight: 599.5;
 }
 
 .scroll {
@@ -18,18 +20,20 @@ form > label {
 
 .btn-filter {
     width: 100%;
-    background-color: transparent;
-    color: black;
+    background-color: #2f6374;
+    color: white;
     padding: 14px 20px;
     margin: 8px 0;
-    border: 1px solid black;
+    border: 1px solid #2f6374;
     cursor: pointer;
     font-size: 20px;
+    font-weight: bolder;
     /* border: 1px solid black; */
     justify-self: center;
 }
 
 .btn-filter:hover {
     color: white;
-    background: black;
+    background: #234853;
+    font-weight: bold;
 }

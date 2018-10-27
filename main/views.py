@@ -53,7 +53,7 @@ def incomes(request):
     elif value > spent and value.amount > 0:
         message = "You save money"
     elif value.amount == 0 and spent.amount == 0:
-        message = "Você não possui gastos e receita"
+        message = "You have no expenses and revenue"
     elif value == spent:
         message = "Limit reached"
 
