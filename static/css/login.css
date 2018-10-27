@@ -34,6 +34,14 @@ a:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.9), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background: url("/static/images/logo4.jpeg") -190px -575px no-repeat;
     background-color: rgba(255, 255, 255, 0.90);
+    margin-right: -410px;
+    margin-top: -50px;
+    
+}
+
+.containertwo {
+     margin-right: 700px;
+     margin-top: -130px;
 }
 
 body {
@@ -45,7 +53,7 @@ body {
     background-color: none;
     background-image: url("/static/images/login/login1.jpg");
     float: right;
-    margin-right: 100px;
+    margin-right: 160px;
     
 }
 
@@ -162,6 +170,20 @@ input[type=submit]:hover {
 .signup {
     text-align: center;
 }
+
+#about{
+    color: #203a42;
+    background-color: white;
+    font-weight: bold;
+    border: #105669;
+    font-size: 100%;
+}
+
+#about:hover{
+    transition: 200ms;
+    text-shadow: 0 0 3px white;
+}
+
 
 
 @media(max-width: 310px) {
