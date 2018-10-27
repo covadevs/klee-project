@@ -1,0 +1,30 @@
+extends main/index
+
+block head
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js')
+    script(src='/static/javascripts/load-charts.js')
+    link(href='/static/css/charts.css', rel='stylesheet')
+block content
+    #content-container
+        canvas(id="exchangeChart")
+    script
+        | var ctx = document.getElementById("exchangeChart");
+        | var paids = JSON.parse('{{ paids|safe }}');
+        | console.log(paids.filter(p => p == false).length)
+        | var exchangeChart = new Chart(ctx, {
+        |     type: 'doughnut',
+        |     data: {
+        |         datasets: [{
+        |             data: [paids.filter(p => p == true).length, paids.filter(p => p == false).length],
+        |             backgroundColor: [
+        |                 'rgba(54, 162, 235, 0.2)',
+        |             ],
+        |             borderColor: [
+        |                 'rgba(54, 162, 235, 1)',
+        |             ],
+        |             borderWidth: 1
+        |         }],
+        |         labels: ["Paid", "Not paid"]
+        |     },
+        | });
+            

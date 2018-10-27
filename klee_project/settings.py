@@ -73,9 +73,9 @@ INSTALLED_APPS = [
     'klee_income',
     'klee_consumption',
     'klee_category',
+    'klee_charts',
     'djmoney',
     'django_filters',
-    'bootstrap3',
 ]
 
 MIDDLEWARE = [

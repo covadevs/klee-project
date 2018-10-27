@@ -7,10 +7,11 @@ if(document.readyState === 'loading') {
 function afterLoaded() {
     addItem('button_one', 'Income', null, 'incomes');
     addItem('button_two', 'Expense', null, 'consumptions');
-    addItem('button_three', 'Category', null, 'categories');
+    addItem('button_three', 'Charts', null, 'charts');
+    addItem('button_four', 'Category', null, 'categories');
 }
 
-function addItem(idItem, text, icon_path, href){
+function addItem(idItem, text, icon_path, href) {
     let sidebar = document.getElementById('sidebar');
     let link = document.createElement('a');
 

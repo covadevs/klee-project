@@ -10,7 +10,7 @@ from klee_consumption.tables import FilteredConsumptionListView
 from django.db.models import Sum
 from djmoney.models.fields import MoneyField
 from djmoney.money import Money
-import fontawesome as fa
+import json
 
 # Create your views here.
 
@@ -90,3 +90,15 @@ def categories(request):
     }
 
     return render(request, 'content/category-content.pug', context=context_dict)
+
+@login_required
+def charts(request) :
+    queryset = Consumption.objects.filter(user=request.user.id)
+
+    paids = [obj.paid for obj in queryset]
+    context_dict = {
+        'title': 'Klee',
+        'paids': json.dumps(paids)
+    }
+
+    return render(request, 'content/chart-content.pug', context=context_dict)
