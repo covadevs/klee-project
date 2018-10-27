@@ -9,6 +9,8 @@ form {
 
 form > label {
     text-align: left;
+    color: #203a42;
+    font-weight: 599.5;
 }
 
 .scroll {

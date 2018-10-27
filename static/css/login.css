@@ -44,6 +44,9 @@ body {
     align-items: center;
     background-color: none;
     background-image: url("/static/images/login/login.jpg");
+    float: right;
+    margin-right: 100px;
+    
 }
 
 .form-container {
@@ -159,6 +162,7 @@ input[type=submit]:hover {
 .signup {
     text-align: center;
 }
+
 
 @media(max-width: 310px) {
     .container {
