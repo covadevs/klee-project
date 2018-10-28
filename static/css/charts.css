@@ -1,6 +1,36 @@
-canvas{
+/* canvas{
 
     width:500px !important;
     height:400px !important;
   
+  } */
+
+  #container-chart {
+    display: grid;
+    grid-template-columns: 1fr, 1fr;
+    grid-template-rows:  1fr, 1fr;
+    /* justify-content: center;
+    align-content: center; */
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: 
+    "paid-notpaid gastoportempo"
+    "gastossemanaismensais gastoporcategoria";
   }
+
+  #paid-notpaid {
+    grid-area: paid-notpaid
+  }
+
+  #gastoportempo {
+    grid-area: gastoportempo
+  }
+
+  #gastossemanaismensais {
+    grid-area: gastossemanaismensais
+  }
+
+  #gastoporcategoria {
+    grid-area: gastoporcategoria
+  }
+

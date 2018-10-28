@@ -7,6 +7,14 @@
     "content-table";
 }
 
+#content-container-chart {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "container-chart";
+}
+
 #content-container-income {
     display: grid;
     grid-template-rows: 80px 1fr;

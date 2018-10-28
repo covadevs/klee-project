@@ -5,10 +5,20 @@ block head
     script(src='/static/javascripts/load-charts.js')
     link(href='/static/css/charts.css', rel='stylesheet')
 block content
-    #content-container
-        canvas(id="exchangeChart")
+    #content-container-chart
+        #container-chart
+            #paid-notpaid
+                canvas(id="paid-notpaid-chart")
+            #gastoportempo
+                canvas(id="gastoportempo-chart")
+            #gastossemanaismensais
+                canvas(id="gastossemanaismensais-chart")
+            #gastoporcategoria
+                canvas(id="gastoporcategoria-chart")
     script
-        | var ctx = document.getElementById("exchangeChart");
+        | var ctx = document.getElementById("paid-notpaid-chart");
+        | ctx.style.height = '200px';
+        | ctx.style.width = '200px';
         | var paids = JSON.parse('{{ paids|safe }}');
         | console.log(paids.filter(p => p == false).length)
         | var exchangeChart = new Chart(ctx, {
@@ -17,14 +27,94 @@ block content
         |         datasets: [{
         |             data: [paids.filter(p => p == true).length, paids.filter(p => p == false).length],
         |             backgroundColor: [
-        |                 'rgba(54, 162, 235, 0.2)',
+        |                 'rgb(118,255,3)',
+        |                 'rgb(255,81,49)',
         |             ],
-        |             borderColor: [
-        |                 'rgba(54, 162, 235, 1)',
-        |             ],
+        //- |             borderColor: [
+        //- |                 'rgba(255, 0, 0)',
+        //- |                 'rgba(54, 162, 235)',
+        //- |             ],
         |             borderWidth: 1
         |         }],
         |         labels: ["Paid", "Not paid"]
+        |     }, options: {responsive: false}
+        | });
+
+        | var ctx = document.getElementById("gastoportempo-chart");
+        | ctx.style.height = '250px';
+        | ctx.style.width = '400px';
+        | var values = JSON.parse('{{ values|safe }}');
+        | var dates = JSON.parse('{{ dates|safe }}');
+        | console.log(values)
+        | var exchangeChart = new Chart(ctx, {
+        |         type: 'line',
+        |         data: {
+        |           labels: dates,
+        |           datasets: [{ 
+        |               data: values,
+        |               label: "Expense",
+        |               borderColor: "#3e95cd",
+        |               fill: false
+        |             }]
+        |         },
+        |         options: {
+        |           responsive: false,
+        |           title: {
+        |             display: true,
+        |             text: 'Expenses per dates'
+        |           }
+        |         }
+        |       });
+
+        | var ctx = document.getElementById("gastossemanaismensais-chart");
+        | ctx.style.height = '200px';
+        | ctx.style.width = '200px';
+        | var types = JSON.parse('{{ types|safe }}');
+        | var exchangeChart = new Chart(ctx, {
+        |     type: 'doughnut',
+        |     data: {
+        |         datasets: [{
+        |             data: [types.filter(t => t == 'W').length, types.filter(t => t == 'M').length],
+        |             backgroundColor: [
+        |                 'rgb(16,32,39)','rgba(54, 162, 235)',
+        |             ],
+        |             borderWidth: 1
+        |         }],
+        |         labels: ["Weekly", "Monthly"]
+        |     }, options: {responsive: false}
+        | });
+
+        | var ctx = document.getElementById("gastoporcategoria-chart");
+        | ctx.style.height = '250px';
+        | ctx.style.width = '400px';
+        | var categories = JSON.parse('{{ categories|safe }}');
+        | var categories_count = JSON.parse('{{ categories_count|safe }}');
+        | var exchangeChart = new Chart(ctx, {
+        |     type: 'bar',
+        |     data: {
+        |       labels: categories,
+        |       datasets: [
+        |         {
+        |           label: "Pagamentos",
+        |           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        |           data: categories_count
+        |         }
+        |       ]
         |     },
+        |     options: {
+        |       responsive: false,
+        |       legend: { display: false },
+        |       title: {
+        |         display: true,
+        |         text: 'Expenses per category'
+        |       },
+        |       scales: {
+        |        yAxes: [{
+        |            ticks: {
+        |                beginAtZero: true
+        |            }
+        |        }]
+        |       }
+        |     }
         | });
             

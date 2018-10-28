@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django_tables2 import RequestConfig
 from klee_income.models import Income
 from klee_income.tables import IncomeTable
+from klee_category.models import Category
 from klee_consumption.models import Consumption
 from klee_consumption.tables import ConsumptionTable
 from klee_consumption.tables import ConsumptionFilter
@@ -11,6 +12,7 @@ from django.db.models import Sum
 from djmoney.models.fields import MoneyField
 from djmoney.money import Money
 import json
+from django.db.models import Count
 
 # Create your views here.
 
@@ -33,7 +35,7 @@ def incomes(request):
         sugested_value = Money(0, 'R$')
         value = Money(0, 'R$')
     
-    if(Consumption.objects.filter(pk=request.user.id).exists()):
+    if(Consumption.objects.filter(user=request.user.id).exists()):
         consumptions = Consumption.objects.filter(paid=False)
         if len(consumptions) > 0:
             spent = Money(consumptions.aggregate(Sum('value'))['value__sum'], 'R$')
@@ -94,11 +96,27 @@ def categories(request):
 @login_required
 def charts(request) :
     queryset = Consumption.objects.filter(user=request.user.id)
+    querysetCategory = Consumption.objects.values('category').order_by('category').annotate(count=Count('category'))
+    categories = Category.objects.all().order_by('pk')
 
     paids = [obj.paid for obj in queryset]
+    values = [str(obj.value.amount) for obj in queryset]
+    dates = [str(obj.date) for obj in queryset]
+    type = [str(obj.consumption_opts) for obj in queryset]
+    count_by_categories = [obj['count'] for obj in querysetCategory]
+    categories = [obj.category_name for obj in categories]
+    print(categories)
+
     context_dict = {
         'title': 'Klee',
-        'paids': json.dumps(paids)
+        'paids': json.dumps(paids),
+        'values': json.dumps(values),
+        'dates': json.dumps(dates),
+        'types': json.dumps(type),
+        'categories_count': json.dumps(count_by_categories),
+        'categories': json.dumps(categories)
     }
+
+
 
     return render(request, 'content/chart-content.pug', context=context_dict)
