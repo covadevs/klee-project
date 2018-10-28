@@ -15,6 +15,7 @@ from django.core.serializers import serialize
 import random
 from django.core.serializers.json import DjangoJSONEncoder
 from klee_category.models import Category
+from django.urls import reverse
 
 # Create your views here.
 class LazyEncoder(DjangoJSONEncoder):
@@ -96,7 +97,30 @@ def generateExpenseReport(request):
 def getExpenseDetails(request, expenseId):
     consumptions = Consumption.objects.filter(pk=expenseId)
     expense = serialize('json', consumptions)
+    link = ',{"link":"'+str(reverse(edit,  kwargs={'expenseId':consumptions[0].pk}))
+
+    linkdel = ',{"link":"'+str(reverse(delete,  kwargs={'expenseId':consumptions[0].pk}))
+
+    expense = expense[:-1] + link + '"}' + linkdel + '"}]'
+
     return HttpResponse(expense, content_type='application/json')
 
+def edit(request, expenseId):
+    exchange = Consumption.objects.get(pk=expenseId)
+
+    if(request.method == 'POST'):
+        form = CreateConsumptionForm(request.POST, instance=exchange)
+        form.save()
+        return HttpResponseRedirect('/consumptions')
+    else:
+        form = CreateConsumptionForm(instance=exchange)
+    return HttpResponse(form)
+
+def delete(request, expenseId):
+    exchange = Consumption.objects.get(pk=expenseId)
+    
+    exchange.delete()
+    
+    return HttpResponseRedirect('/consumptions')
 
     

@@ -109,18 +109,64 @@ function tableRowClick(url) {
         },
         success: function(data) {
             fields = data[0].fields
+            console.log(data)
             $("#value_detail").empty().append(fields.value + " "+ fields.value_currency);
             $("#desc_detail").empty().append(fields.description);
             $("#type_detail").empty().append(fields.consumption_opts);
             $("#paid_detail").empty().append(fields.paid ? 'Yes':'No');
             $("#cat_detail").empty().append(fields.category);
             $("#date_detail").empty().append(fields.date);
+            document.getElementById("edit").setAttribute("onclick", "loadExchangeEditForm('"+data[1].link+"')")
+            document.getElementById("delete").setAttribute("onclick", "deleteExchange('"+data[2].link+"')")
         },
         error: function(error) {
             console.log(error);
         }
     });
 } 
+
+function loadExchangeEditForm(url) {
+    document.getElementById('modalEditConsumption').style.display = 'block';
+    document.getElementById('modalDetailConsumption').style.display = 'none';
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: {
+            csrfmiddlewaretoken: csrftoken,
+        },
+        timeout: 0,
+        success: function(data) {
+            console.log(data)
+            cleanElement('editConsumptionContainer');
+            $('#editConsumptionContainer').append(data);
+            document.getElementById('id_value_0').focus();
+            $(function() {
+                $("#id_date").datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'yy-mm-dd',
+                });
+            });
+        }
+    })
+}
+
+function deleteExchange(url) {
+    var conf = confirm("Deseja realmente deletar?")
+    if(conf == true) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                csrfmiddlewaretoken: csrftoken,
+            },
+            timeout: 0,
+            success: function(data) {
+                window.location.replace("/consumptions")
+            }
+        })
+    }
+}
 
 function loadCategoryForm(url) {
     document.getElementById('modalCreateCategory').style.display = 'block';
