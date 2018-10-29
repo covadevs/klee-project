@@ -117,7 +117,36 @@ function tableRowClick(url) {
             $("#cat_detail").empty().append(fields.category);
             $("#date_detail").empty().append(fields.date);
             document.getElementById("edit").setAttribute("onclick", "loadExchangeEditForm('"+data[1].link+"')")
+            document.getElementById("form-edit-consumption").setAttribute("action", ""+data[1].link+"")
             document.getElementById("delete").setAttribute("onclick", "deleteExchange('"+data[2].link+"')")
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+} 
+
+function tableRowClickCategory(url) {
+    document.getElementById('modalDetailCategory').style.display = 'block';
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: {
+            csrfmiddlewaretoken: csrftoken,
+        },
+        success: function(data) {
+            console.log(data)
+            fields = data[0].fields
+            $("#name_detail").empty().append(fields.category_name);
+            $("#acron_detail").empty().append(fields.category_acron);
+            // $("#type_detail").empty().append(fields.consumption_opts);
+            // $("#paid_detail").empty().append(fields.paid ? 'Yes':'No');
+            // $("#cat_detail").empty().append(fields.category);
+            // $("#date_detail").empty().append(fields.date);
+            document.getElementById("edit-cat").setAttribute("onclick", "loadCategoryEditForm('"+data[1].link+"')")
+            document.getElementById("form-edit-category").setAttribute("action", ""+data[1].link+"")
+            document.getElementById("delete-cat").setAttribute("onclick", "deleteCategory('"+data[2].link+"')")
+
         },
         error: function(error) {
             console.log(error);
@@ -151,7 +180,44 @@ function loadExchangeEditForm(url) {
     })
 }
 
+function loadCategoryEditForm(url) {
+    document.getElementById('modalEditCategory').style.display = 'block';
+    document.getElementById('modalDetailCategory').style.display = 'none';
+    $.ajax({
+        url: url,
+        type: 'GET',
+        data: {
+            csrfmiddlewaretoken: csrftoken,
+        },
+        timeout: 0,
+        success: function(data) {
+            console.log(data)
+            cleanElement('editCategoryContainer');
+            $('#editCategoryContainer').append(data);
+            document.getElementById('id_category_name').focus();
+        }
+    })
+}
+
+
 function deleteExchange(url) {
+    var conf = confirm("Deseja realmente deletar?")
+    if(conf == true) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                csrfmiddlewaretoken: csrftoken,
+            },
+            timeout: 0,
+            success: function(data) {
+                window.location.replace("/consumptions")
+            }
+        })
+    }
+}
+
+function deleteCategory(url) {
     var conf = confirm("Deseja realmente deletar?")
     if(conf == true) {
         $.ajax({

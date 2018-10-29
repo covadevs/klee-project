@@ -4,6 +4,7 @@ from django_tables2 import RequestConfig
 from klee_income.models import Income
 from klee_income.tables import IncomeTable
 from klee_category.models import Category
+from klee_category.tables import CategoryTable
 from klee_consumption.models import Consumption
 from klee_consumption.tables import ConsumptionTable
 from klee_consumption.tables import ConsumptionFilter
@@ -87,8 +88,13 @@ def consumptions(request):
 
 @login_required
 def categories(request):
+    category = Category.objects.all()
+
+    table = CategoryTable(category)
+    RequestConfig(request).configure(table)
     context_dict = {
-        'title': 'Klee'
+        'title': 'Klee',
+        'table': table
     }
 
     return render(request, 'content/category-content.pug', context=context_dict)

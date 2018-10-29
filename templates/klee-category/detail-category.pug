@@ -1,0 +1,25 @@
+include ./klee-category/edit-category.pug
+//- script(src="/static/javascripts/ajax.js")
+#modalDetailCategory.modal
+    .modal-content.animate
+        span(onclick="document.getElementById('modalDetailCategory').style.display = 'none'", title="Close").close &times;
+        .container
+            .modalTitle
+                | Detail Expense
+        .container
+            #detailCategoryContainer
+                table
+                    tr
+                        th
+                            | Name
+                        th
+                            | Acron.
+                    tr
+                        td(id="name_detail")
+                        td(id="acron_detail")
+                button(id="edit-cat").btn Edit
+                button(id="delete-cat").btn Delete
+                        
+                            
+                            
+

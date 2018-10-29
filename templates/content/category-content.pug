@@ -1,5 +1,5 @@
 extends main/index
-
+- load render_table from django_tables2
 block head
     link(href='/static/css/klee-consumption-content.css', rel='stylesheet')
 block content
@@ -7,3 +7,5 @@ block content
         .content-style#content-manager-bar
             a(onclick="loadCategoryForm('{% url 'create-category' %}')").content-manager-item
                 img(src="/static/images/plus.svg")
+        .content-style#content-table
+            - render_table table

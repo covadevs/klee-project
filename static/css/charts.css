@@ -18,6 +18,10 @@
     "gastossemanaismensais gastoporcategoria";
   }
 
+  .content-chart {
+    border: 1px solid black;
+  }
+
   #paid-notpaid {
     grid-area: paid-notpaid
   }

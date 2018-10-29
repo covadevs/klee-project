@@ -1,0 +1,11 @@
+#modalEditCategory.modal
+    form(id="form-edit-category", action="{% url 'category-edit' 0 %}", method="POST").modal-content.animate
+        span(onclick="document.getElementById('modalEditCategory').style.display = 'none'", title="Close").close &times;
+        .container
+            .modalTitle
+                | Edit Category
+        .container
+            #editCategoryContainer
+        .container
+            {% csrf_token %}
+            button(type="submit").editbtn Edit Category

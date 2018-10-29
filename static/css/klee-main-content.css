@@ -116,8 +116,12 @@
     width: 100%;
     padding: 10px;
     text-decoration: none;
-    height: 420px;
+    height: 350px;
     overflow: auto;
+}
+
+#form-filter{
+    height: 350px;
 }
 
 tr:nth-child(even){background-color: #f2f2f2;}

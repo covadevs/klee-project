@@ -67,7 +67,7 @@ def generateExpenseReport(request):
             if(expense.paid == True):
                 totalExpenseAmount += expense.value
             else:
-                balances.append(balance)
+                balances.append(expense.value)
 
         lancamentosFuturos = Money(0, 'R$')
         for balance in balances:
@@ -96,6 +96,8 @@ def generateExpenseReport(request):
 
 def getExpenseDetails(request, expenseId):
     consumptions = Consumption.objects.filter(pk=expenseId)
+    category = Category.objects.filter(category_name=str(consumptions[0].category))
+
     expense = serialize('json', consumptions)
     link = ',{"link":"'+str(reverse(edit,  kwargs={'expenseId':consumptions[0].pk}))
 

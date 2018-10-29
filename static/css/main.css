@@ -84,7 +84,7 @@ body {
     justify-self: center;
 }
 
-#topbar{
+#topbar {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
@@ -105,7 +105,7 @@ body {
     color: white;
     font-weight: 600;
 }
-appname:hover{
+appname:hover {
     background-color: #234853
 }
 

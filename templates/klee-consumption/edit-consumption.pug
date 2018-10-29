@@ -1,12 +1,12 @@
 - load djmoney
 #modalEditConsumption.modal
-    form(action="{% url 'expense-edit' 1 %}", method="POST").modal-content.animate
+    form(id="form-edit-consumption",action="{% url 'expense-edit' 0 %}", method="POST").modal-content.animate
         span(onclick="document.getElementById('modalEditConsumption').style.display = 'none'", title="Close").close &times;
         .container
             .modalTitle
-                | Edit Exchange
+                | Edit Expense
         .container
             #editConsumptionContainer
         .container
             {% csrf_token %}
-            button(type="submit").editbtn Edit Exchange
+            button(type="submit").editbtn Edit Expense
