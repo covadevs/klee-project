@@ -18,7 +18,7 @@ class Consumption(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    value = MoneyField(max_digits=14, decimal_places=2, default_currency='BRL')
+    value = MoneyField(max_digits=14, decimal_places=2, default_currency='R$')
 
     description = models.CharField('Description', max_length=30)
 

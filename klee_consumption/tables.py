@@ -9,6 +9,7 @@ import django_tables2
 from djmoney.models.fields import MoneyField
 from django.urls import reverse
 from klee_consumption import views
+from django_tables2.paginators import LazyPaginator
 
 class MyRangeWidget(RangeWidget):
     def __init__(self, from_attrs=None, to_attrs=None, attrs=None):
@@ -32,6 +33,7 @@ class ConsumptionTable(tables.Table):
 
         fields = ['value', 'description', 'consumption_opts', 'category', 'date']
         empty_text = 'No data'
+        paginator_class = LazyPaginator
 
 class ConsumptionFilter(django_filters.FilterSet):
     date = DateFromToRangeFilter(

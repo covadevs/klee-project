@@ -77,7 +77,7 @@ def consumptions(request):
     filter = ConsumptionFilter(request.GET, queryset=consumptionsUser)
 
     table = ConsumptionTable(filter.qs)
-    RequestConfig(request).configure(table)
+    RequestConfig(request, paginate={'per_page': 25}).configure(table)
     context_dict = {
         'table': table,
         'filter': filter,
